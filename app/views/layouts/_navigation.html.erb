@@ -1,0 +1,59 @@
+<!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+<%= link_to (t "application"), root_path, :class => 'brand' %>
+
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+</a>
+                    
+<div class="nav-collapse collapse">
+    <ul class="nav">
+        
+		<li class="active"><a href="#">خانه</a></li>
+        
+		<li><a href="#about">دریاره ما</a></li>
+        <li><a href="#contact">نماس با ما</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">عملیات</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="nav-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+            </ul>
+        </li>
+	    <% if user_signed_in? %>
+	      <li>
+	      <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>        
+	      </li>
+	    <% else %>
+	      <li>
+	      <%= link_to 'Login', new_user_session_path %>  
+	      </li>
+	    <% end %>
+	    <% if user_signed_in? %>
+	      <li>
+	      <%= link_to 'Edit account', edit_user_registration_path %>
+	      </li>
+	      <% if current_user.has_role? :admin %>
+	        <li>
+	        <%= link_to 'Admin', users_path %>
+	        </li>
+	      <% end %>
+	    <% else %>
+	      <li>
+	      <%= link_to 'Sign up', new_user_registration_path %>
+	      </li>
+	    <% end %>
+    </ul>
+	
+    <form class="navbar-form pull-right">
+        <input class="span2" type="text" placeholder="Email">
+        <input class="span2" type="password" placeholder="Password">
+        <button type="submit" class="btn">Sign in</button>
+    </form>
+</div><!--/.nav-collapse -->

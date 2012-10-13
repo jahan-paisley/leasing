@@ -1,0 +1,47 @@
+<h1><%= t :list_customers%></h1>
+
+<table>
+  <tr>
+    <th><%= t 'activerecord.attributes.customer.firstname'%></th>
+    <th><%= t 'activerecord.attributes.customer.lastname'%></th>
+    <th><%= t 'activerecord.attributes.customer.identity_no'%></th>
+    <th><%= t 'activerecord.attributes.customer.national_no'%></th>
+    <th><%= t 'activerecord.attributes.customer.birthdate'%></th>
+    <th><%= t 'activerecord.attributes.customer.identity_serial'%></th>
+    <th><%= t 'activerecord.attributes.customer.fathername'%></th>
+    <th><%= t 'activerecord.attributes.customer.identity_issue_date'%></th>
+    <th><%= t 'activerecord.attributes.customer.identity_issue_city'%></th>
+    <th><%= t 'activerecord.attributes.customer.email'%></th>
+    <th><%= t 'activerecord.attributes.customer.legal_type'%></th>
+    <th><%= t 'activerecord.attributes.customer.gender'%></th>
+    <th><%= t 'activerecord.attributes.customer.marital_status'%></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @customers.each do |customer| %>
+  <tr>
+    <td><%= customer.firstname %></td>
+    <td><%= customer.lastname %></td>
+    <td><%= customer.identity_no %></td>
+    <td><%= customer.national_no %></td>
+    <td><%= customer.birthdate %></td>
+    <td><%= customer.identity_serial %></td>
+    <td><%= customer.fathername %></td>
+    <td><%= customer.identity_issue_date %></td>
+    <td><%= customer.identity_issue_city %></td>
+    <td><%= customer.email %></td>
+    <td><%= customer.legal_type %></td>
+    <td><%= customer.gender %></td>
+    <td><%= customer.marital_status %></td>
+    <td><%= link_to 'Show', customer %></td>
+    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+    <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to t(:new_customer), new_customer_path %>

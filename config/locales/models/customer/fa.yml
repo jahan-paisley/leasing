@@ -1,0 +1,22 @@
+# encoding: utf-8
+fa:
+  activerecord:
+    models:
+      customer: 'مشتری'
+    attributes:
+      customer:
+        firstname: 'نام'
+        lastname: 'آدرس'
+        birthdate: 'تاریخ تولد'
+        email: 'ایمیل'
+        fathername: 'نام پدر'
+        firstname: 'نام'
+        gender: 'جنسیت'
+        identity_issue_city: 'محل صدور'
+        identity_issue_date: 'تاریخ صدور'
+        identity_no: 'شماره شناسنامه'
+        identity_serial: 'سریال شناسنامه'
+        lastname: 'نام خانوادگی'
+        marital_status: 'نوع تاهل'
+        national_no: 'شماره ملی'
+        legal_type: 'نوع مشتری'
