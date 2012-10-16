@@ -22,3 +22,4 @@ gem "rolify", ">= 3.2.0"
 gem 'debugger', group: [:development, :test]
 gem 'passenger'
 gem 'omniauth'
+gem 'jalalidate'

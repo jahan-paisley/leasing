@@ -40,6 +40,8 @@ class CustomersController < ApplicationController
   # POST /customers
   # POST /customers.json
   def create
+    debugger
+    to_gregorian (params)
     @customer = Customer.new(params[:customer])
 
     respond_to do |format|

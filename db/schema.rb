@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20120930074840) do
     t.string   "lastname"
     t.string   "identity_no"
     t.string   "national_no"
-    t.datetime "birthdate"
+    t.date "birthdate"
     t.string   "identity_serial"
     t.string   "fathername"
     t.date     "identity_issue_date"
