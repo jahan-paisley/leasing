@@ -1,68 +1,39 @@
 <%= form_for(@person) do |f| %>
-  <% if @person.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
+    <% if @person.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
+          <ul>
+            <% @person.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
 
-      <ul>
-      <% @person.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+    <div class="tabbable">
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a href="#pane1" data-toggle="tab">Tab 1</a>
+        </li>
+        <li><a href="#pane2" data-toggle="tab">Tab 2</a></li>
+
       </ul>
-    </div>
-  <% end %>
+      <div class="tab-content">
+        <div id="pane1" class="tab-pane active">
+          <h4>اطلاعات پایه</h4>
+          <%= render 'person_fields', :f=> f %>
+        </div>
+        <div id="pane2" class="tab-pane">
+          <h4>آدرس</h4>
+          <%= f.fields_for :addresses do |builder| %>
+              <%= render "address_fields", :f => builder %>
+          <% end %>
+        </div>
+      </div><!-- /.tab-content -->
+    </div><!-- /.tabbable -->
 
-  <div class="field">
-    <%= f.label :firstname  %><br />
-    <%= f.text_field :firstname %>
-  </div>
-  <div class="field">
-    <%= f.label :lastname  %><br />
-    <%= f.text_field :lastname %>
-  </div>
-  <div class="field">
-    <%= f.label :identity_no  %><br />
-    <%= f.text_field :identity_no %>
-  </div>
-  <div class="field">
-    <%= f.label :national_no  %><br />
-    <%= f.text_field :national_no %>
-  </div>
-  <div class="field">
-    <%= f.label :birthdate  %><br />
-    <%= f.text_field :birthdate, :class => "date"%>
-  </div>
-  <div class="field">
-    <%= f.label :identity_serial  %><br />
-    <%= f.text_field :identity_serial %>
-  </div>
-  <div class="field">
-    <%= f.label :fathername  %><br />
-    <%= f.text_field :fathername %>
-  </div>
-  <div class="field">
-    <%= f.label :identity_issue_date  %><br />
-    <%= f.text_field :identity_issue_date, :class => "date" %>	
-  </div>
-  <div class="field">
-    <%= f.label :identity_issue_city  %><br />
-    <%= f.text_field :identity_issue_city %>
-  </div>
-  <div class="field">
-    <%= f.label :legal_type  %><br />
-    <%= f.text_field :legal_type %>
-  </div>
-  <div class="field">
-    <%= f.label :gender  %><br />
-	<%= select("person", "gender", Gender.all.map{|o| [o.value,o.key]}, {:include_blank => true}) %>
-    <!--
-	<%= f.select(:gender, options_for_select([['مرد', 'Male'], ['زن', 'Female']])) %>
-    -->
-  </div>
-  <div class="field">
-    <%= f.label :marital_status  %><br />
-    <%= f.select(:marital_status, options_for_select([['متاهل', 'Married'], ['مجرد', 'Single']])) %> 
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
 <% end %>

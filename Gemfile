@@ -23,3 +23,4 @@ gem 'debugger', group: [:development, :test]
 gem 'passenger'
 gem 'omniauth'
 gem 'jalalidate'
+gem 'nifty-generators'

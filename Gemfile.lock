@@ -114,6 +114,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.19)
     multi_json (1.3.6)
+    nifty-generators (0.4.6)
     nokogiri (1.5.5)
     nokogiri (1.5.5-x86-mingw32)
     omniauth (1.1.1)
@@ -215,6 +216,7 @@ DEPENDENCIES
   jalalidate
   jquery-rails
   launchy (>= 2.1.2)
+  nifty-generators
   omniauth
   passenger
   rails (= 3.2.8)

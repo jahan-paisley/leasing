@@ -11,35 +11,70 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120930074840) do
+ActiveRecord::Schema.define(:version => 20121017144655) do
 
-  create_table "automechanics", :force => true do |t|
-    t.string   "name"
+  create_table "addresses", :force => true do |t|
+    t.integer  "person_id"
+    t.integer  "city_id"
+    t.string   "category"
+    t.string   "level1"
+    t.string   "part1"
+    t.string   "level2"
+    t.string   "part2"
+    t.string   "level3"
+    t.string   "part3"
+    t.string   "phone1"
+    t.string   "phone2"
+    t.string   "phone_range"
     t.string   "email"
-    t.string   "address"
+    t.string   "mobile1"
+    t.string   "mobile2"
+    t.string   "description"
     t.float    "latitude"
     t.float    "longitude"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "username"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
-  create_table "customers", :force => true do |t|
+  add_index "addresses", ["city_id"], :name => "index_addresses_on_city_id"
+  add_index "addresses", ["person_id"], :name => "index_addresses_on_person_id"
+
+  create_table "cities", :force => true do |t|
+    t.string   "name"
+    t.integer  "province_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "cities", ["province_id"], :name => "index_cities_on_province_id"
+
+  create_table "persons", :force => true do |t|
     t.string   "firstname"
     t.string   "lastname"
     t.string   "identity_no"
     t.string   "national_no"
-    t.date "birthdate"
+    t.date     "birthdate"
     t.string   "identity_serial"
     t.string   "fathername"
     t.date     "identity_issue_date"
     t.string   "identity_issue_city"
-    t.string   "email"
     t.string   "legal_type"
     t.string   "gender"
     t.string   "marital_status"
+    t.string   "title"
+    t.string   "job_title"
+    t.string   "job_position"
+    t.string   "job_company"
+    t.string   "job_industry"
+    t.string   "education"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+  end
+
+  create_table "provinces", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "roles", :force => true do |t|
