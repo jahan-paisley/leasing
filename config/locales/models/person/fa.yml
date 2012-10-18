@@ -2,13 +2,12 @@
 fa:
   activerecord:
     models:
-      customer: 'مشتری'
+      person: 'مشتری'
     attributes:
-      customer:
+      person:
         firstname: 'نام'
         lastname: 'آدرس'
         birthdate: 'تاریخ تولد'
-        email: 'ایمیل'
         fathername: 'نام پدر'
         firstname: 'نام'
         gender: 'جنسیت'
