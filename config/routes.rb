@@ -1,7 +1,6 @@
 Leasing::Application.routes.draw do
-  resources :addresses
 
-  resources :persons
+  resources :customers
 
   authenticated :user do
     root :to => 'home#index'

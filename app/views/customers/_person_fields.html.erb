@@ -1,0 +1,91 @@
+<div class="field">
+  <%= f.label :firstname %>
+  <br/>
+  <%= f.text_field :firstname %>
+</div>
+<div class="field">
+  <%= f.label :lastname %>
+  <br/>
+  <%= f.text_field :lastname %>
+</div>
+<div class="field">
+  <%= f.label :identity_no %>
+  <br/>
+  <%= f.text_field :identity_no %>
+</div>
+<div class="field">
+  <%= f.label :national_no %>
+  <br/>
+  <%= f.text_field :national_no %>
+</div>
+<div class="field">
+  <%= f.label :birthdate %>
+  <br/>
+  <%= f.text_field :birthdate, :class => "date" %>
+</div>
+<div class="field">
+  <%= f.label :identity_serial %>
+  <br/>
+  <%= f.text_field :identity_serial %>
+</div>
+<div class="field">
+  <%= f.label :fathername %>
+  <br/>
+  <%= f.text_field :fathername %>
+</div>
+<div class="field">
+  <%= f.label :identity_issue_date %>
+  <br/>
+  <%= f.text_field :identity_issue_date, :class => "date" %>
+</div>
+<div class="field">
+  <%= f.label :identity_issue_city %>
+  <br/>
+  <%= f.text_field :identity_issue_city %>
+</div>
+<div class="field">
+  <%= f.label :legal_type %>
+  <br/>
+  <%= f.text_field :legal_type %>
+</div>
+<div class="field">
+  <%= f.label :gender %>
+  <br/>
+  <%=  f.select(:gender, options_for_select([['مرد', 'Male'], ['زن', 'Female']]), {:prompt => '...'}) %>
+</div>
+<div class="field">
+  <%= f.label :marital_status %>
+  <br/>
+  <%= f.select(:marital_status, options_for_select([['متاهل', 'Married'], ['مجرد', 'Single']]), {:prompt => '...'} ) %>
+</div>
+<div class="field">
+  <%= f.label :title %>
+  <br/>
+  <%= f.text_field :title %>
+</div>
+<div class="field">
+  <%= f.label :job_title %>
+  <br/>
+  <%= f.text_field :job_title %>
+</div>
+<div class="field">
+  <%= f.label :job_position %>
+  <br/>
+  <%= f.text_field :job_position %>
+</div>
+
+<div class="field">
+  <%= f.label :job_company %>
+  <br/>
+  <%= f.text_field :job_company %>
+</div>
+<div class="field">
+  <%= f.label :job_industry %>
+  <br/>
+  <%= f.text_field :job_industry %>
+</div>
+<div class="field">
+  <%= f.label :education %>
+  <br/>
+  <%= f.text_field :education %>
+</div>

@@ -1,0 +1,22 @@
+# encoding: utf-8
+fa:
+  activerecord:
+    models:
+      address: 'آدرس'
+    attributes:
+      address:
+        category: 'نوع'
+        city: 'شهر'
+        priority: 'اولویت'
+        description: 'توضیحات'
+        level1: 'بخش ۱'
+        level2: 'بخش ۲'
+        level3: 'بخش ۳'
+        part1: 'مقدار'
+        part2: 'مقدار'
+        part3: 'مقدار'
+        phones: 'تلفن ها'
+        email: 'ایمیل'
+        mobiles: 'موبایل ها'
+        latitude: 'عرض'
+        longitude: 'طول'

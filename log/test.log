@@ -296,3 +296,4 @@ Binary data inserted for `string` type on column `encrypted_password`
   [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "persons" 
 Processing by PersonsController#create as HTML
   Parameters: {"person"=>{}}
+Connecting to database specified by database.yml

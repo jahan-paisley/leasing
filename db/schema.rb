@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121017144655) do
+ActiveRecord::Schema.define(:version => 20121020132704) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "person_id"
@@ -23,12 +23,9 @@ ActiveRecord::Schema.define(:version => 20121017144655) do
     t.string   "part2"
     t.string   "level3"
     t.string   "part3"
-    t.string   "phone1"
-    t.string   "phone2"
-    t.string   "phone_range"
+    t.string   "phones"
     t.string   "email"
-    t.string   "mobile1"
-    t.string   "mobile2"
+    t.string   "mobiles"
     t.string   "description"
     t.float    "latitude"
     t.float    "longitude"
@@ -69,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20121017144655) do
     t.string   "education"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.string   "type"
   end
 
   create_table "provinces", :force => true do |t|
