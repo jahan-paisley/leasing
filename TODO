@@ -13,6 +13,16 @@
 TODO:
  * refactor the date related code to before_filter to make it globaly work without hassle
  * work on select tag in forms to load automagically valid values from a data source and only accept them as valid inputs
- * complete the person porofile information
+ * complete the person profile information
  * correct the rtl bootstrap
- 
+
+29 Mehr:
+ * Setup accepts_nested_attributes_for for Address and Person association
+ * Working with buidler to build multiple Address entries in Person form  
+ * Setup a bunch of options_for_select entries in forms which should be extracted as helper or sth else later on
+ + Note: f.fields_for :addresses[0] does not work correctly plus that it cause malfunciton of i18n, but calling it multiple times will generate the correct form even when you have a collection with just one item.
+
+TODO:
+ * Add validations to person form 
+ * Work on migaration script
+ * Work on modeling other object rather than Customer 

@@ -16,7 +16,7 @@
           <a href="#pane1" data-toggle="tab">اطلاعات مشتری</a>
         </li>
         <li><a href="#pane2" data-toggle="tab">آدرس اول</a></li>
-
+        <li><a href="#pane3" data-toggle="tab">آدرس دوم</a></li>
       </ul>
       <div class="tab-content">
         <div id="pane1" class="tab-pane active">
@@ -29,7 +29,12 @@
               <%= render "shared/address/address_fields", :f => builder %>
           <% end %>
         </div>
-
+        <div id="pane3" class="tab-pane">
+          <h4>آدرس</h4>
+          <%= f.fields_for :addresses do |builder| %>
+              <%= render "shared/address/address_fields", :f => builder %>
+          <% end %>
+        </div>
 
       </div><!-- /.tab-content -->
     </div><!-- /.tabbable -->
