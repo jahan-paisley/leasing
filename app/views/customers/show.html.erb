@@ -1,65 +1,70 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Firstname:</b>
+<h3><%= Customer.model_name.human %></h3>
+
+<br/>
+<%if notice%>
+<p id="notice"><%= notice %></p>
+<%end%>
+<p class='field'>
+  <b><%= Customer.human_attribute_name("firstname") %>:</b>
   <%= @customer.firstname %>
 </p>
 
-<p>
-  <b>Lastname:</b>
+<p class='field'>
+  <b><%= Customer.human_attribute_name("lastname") %>:</b>
   <%= @customer.lastname %>
 </p>
 
-<p>
-  <b>Identity no:</b>
+<p class='field'>
+  <b><%= Customer.human_attribute_name("identity_no") %>:</b>
   <%= @customer.identity_no %>
 </p>
 
-<p>
-  <b>National no:</b>
+<p class='field'>
+  <b><%= Customer.human_attribute_name("national_no") %>:</b>
   <%= @customer.national_no %>
 </p>
 
-<p>
-  <b>Birthdate:</b>
+<p class='field'>
+  <b><%= Customer.human_attribute_name("birthdate") %>:</b>
   <%= @customer.birthdate %>
 </p>
 
-<p>
-  <b>Identity serial:</b>
+<p class='field'>
+  <b><%= Customer.human_attribute_name("identity_serial") %>:</b>
   <%= @customer.identity_serial %>
 </p>
 
-<p>
-  <b>Fathername:</b>
+<p class='field'>
+  <b><%= Customer.human_attribute_name("fathername") %>:</b>
   <%= @customer.fathername %>
 </p>
 
-<p>
-  <b>Identity issue date:</b>
+<p class='field'>
+  <b><%= Customer.human_attribute_name("identity_issue_date") %>:</b>
   <%= @customer.identity_issue_date %>
 </p>
 
-<p>
-  <b>Identity issue city:</b>
+<p class='field'>
+  <b><%= Customer.human_attribute_name("identity_issue_city") %>:</b>
   <%= @customer.identity_issue_city %>
 </p>
 
-<p>
-  <b>Type:</b>
+<p class='field'>
+  <b><%= Customer.human_attribute_name("legal_type") %>:</b>
   <%= @customer.legal_type %>
 </p>
 
-<p>
-  <b>Gender:</b>
+<p class='field'>
+  <b><%= Customer.human_attribute_name("gender") %>:</b>
   <%= @customer.gender %>
 </p>
 
-<p>
-  <b>Marital status:</b>
+<p class='field'>
+  <b><%= Customer.human_attribute_name("marital_status") %>:</b>
   <%= @customer.marital_status %>
 </p>
 
-
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<br/>
+<%= link_to (t 'Edit'), edit_customer_path(@customer) %> |
+<%= link_to (t 'Back'), customers_path %>

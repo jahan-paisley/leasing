@@ -6,7 +6,7 @@ fa:
     attributes:
       address:
         category: 'نوع'
-        city: 'شهر'
+        city_id: 'شهر'
         priority: 'اولویت'
         description: 'توضیحات'
         level1: 'بخش ۱'

@@ -1,7 +1,14 @@
 # encoding : utf-8
 class CustomersController < ApplicationController
-  @levels = [[ 'خیابان اصلی','Ave'], ['خیایان فرعی','Street' ], ['کوچه', 'Alley'] , ['میدان' ,'Square'], ['بزرگراه','Highway'],
-             [ 'جاده', 'Road'], ['بلوار','Boulevard'],['آزادراه', 'Freeway'],['ین بست','Deadend']]
+ 
+ 
+  def initialize
+    
+    @levels = [[ 'خیابان اصلی','Ave'], ['خیایان فرعی','Street' ], ['کوچه', 'Alley'] , ['میدان' ,'Square'], ['بزرگراه','Highway'],
+               [ 'جاده', 'Road'], ['بلوار','Boulevard'],['آزادراه', 'Freeway'],['ین بست','Deadend']]
+    super
+  end
+  
   # GET /customers
   # GET /customers.json
   def index
@@ -27,6 +34,7 @@ class CustomersController < ApplicationController
   # GET /customers/new
   # GET /customers/new.json
   def new
+               
     @customer = Customer.new
     1.times do
       @customer.addresses.build

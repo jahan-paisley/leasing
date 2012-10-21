@@ -61,7 +61,6 @@ GEM
       capybara (>= 1.1.2)
       cucumber (>= 1.1.8)
       nokogiri (>= 1.5.0)
-    daemon_controller (1.0.0)
     database_cleaner (0.9.1)
     debugger (1.2.1)
       columnize (>= 0.3.1)
@@ -87,7 +86,6 @@ GEM
     factory_girl_rails (4.1.0)
       factory_girl (~> 4.1.0)
       railties (>= 3.0.0)
-    fastthread (1.0.7)
     ffi (1.1.5)
     ffi (1.1.5-x86-mingw32)
     geocoder (1.1.4)
@@ -95,7 +93,6 @@ GEM
       json (>= 1.4.6)
     gherkin (2.11.5-x86-mingw32)
       json (>= 1.4.6)
-    hashie (1.2.0)
     hike (1.2.1)
     i18n (0.6.1)
     jalalidate (0.3.1)
@@ -117,15 +114,9 @@ GEM
     nifty-generators (0.4.6)
     nokogiri (1.5.5)
     nokogiri (1.5.5-x86-mingw32)
-    omniauth (1.1.1)
-      hashie (~> 1.2)
-      rack
     orm_adapter (0.4.0)
-    passenger (3.0.17)
-      daemon_controller (>= 1.0.0)
-      fastthread (>= 1.0.1)
-      rack
-      rake (>= 0.8.1)
+    pg (0.14.1)
+    pg (0.14.1-x86-mingw32)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -217,8 +208,7 @@ DEPENDENCIES
   jquery-rails
   launchy (>= 2.1.2)
   nifty-generators
-  omniauth
-  passenger
+  pg
   rails (= 3.2.8)
   rolify (>= 3.2.0)
   rspec-rails (>= 2.11.0)

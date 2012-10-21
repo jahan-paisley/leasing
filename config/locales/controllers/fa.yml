@@ -1,4 +1,4 @@
 # encoding: utf-8
 fa:
   new_customer: 'مشتری جدید'
-  list_customer: 'لیست مشتریان'
+  list_customers: 'لیست مشتریان'
