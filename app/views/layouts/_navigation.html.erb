@@ -13,8 +13,9 @@
 		<li class="active"><a href="#">خانه</a></li>
         
 		<li><a href="#about">دریاره ما</a></li>
-        <li><a href="#contact">نماس با ما</a></li>
-        <li class="dropdown">
+        <li><a href="#contact">تماس با ما</a></li>
+        <!--
+		<li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li><a href="#">عملیات</a></li>
@@ -26,6 +27,7 @@
                 <li><a href="#">One more separated link</a></li>
             </ul>
         </li>
+        -->
 	    <% if user_signed_in? %>
 	      <li>
 	      <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>        
