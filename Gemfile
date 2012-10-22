@@ -10,6 +10,7 @@ gem "rolify", ">= 3.2.0"
 #gem 'passenger'
 #gem 'omniauth'
 gem 'jalalidate'
+gem 'client_side_validations'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

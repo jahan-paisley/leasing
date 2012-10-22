@@ -198,8 +198,4 @@ fa:
     errors:
       <<: *errors
   application: 'سلامت جوان'
-  Back: 'بازگشت'
-  Show: 'نمایش'
-  Edit: 'ویرایش'
-  Destroy: 'حذف'
-  
+ 

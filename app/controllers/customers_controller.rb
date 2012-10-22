@@ -1,11 +1,10 @@
 # encoding : utf-8
 class CustomersController < ApplicationController
- 
- 
   def initialize
-    
-    @levels = [[ 'خیابان اصلی','Ave'], ['خیایان فرعی','Street' ], ['کوچه', 'Alley'] , ['میدان' ,'Square'], ['بزرگراه','Highway'],
-               [ 'جاده', 'Road'], ['بلوار','Boulevard'],['آزادراه', 'Freeway'],['ین بست','Deadend']]
+    @levels = [[ 'خیابان اصلی','Ave'], ['خیایان فرعی','Street' ], ['کوچه', 'Alley'] , ['میدان' ,'Square'], ['بزرگراه','Highway'],[ 'جاده', 'Road'], ['بلوار','Boulevard'],['آزادراه', 'Freeway'],['بن بست','Deadend']]
+    @address_categories = [['محل کار','Workplace'],['محل سکونت','Homeplace']]
+    @gender = [['مرد', 'Male'], ['زن', 'Female']]
+    @marital_status = [['متاهل', 'Married'], ['مجرد', 'Single']]
     super
   end
   
@@ -24,7 +23,6 @@ class CustomersController < ApplicationController
   # GET /customers/1.json
   def show
     @customer = Customer.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @customer }

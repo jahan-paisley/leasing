@@ -30,3 +30,7 @@ debug.log
 log/development.log
 
 app/.DS_Store
+
+app/assets/.DS_Store
+
+app/assets/stylesheets/.DS_Store

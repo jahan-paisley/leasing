@@ -10,5 +10,7 @@ class Person < ActiveRecord::Base
   has_many :addresses, :dependent => :destroy
   #has_one :primary_address, :class_name => 'Address'
   accepts_nested_attributes_for :addresses, :reject_if => lambda { |a| a[:category].blank? }, :allow_destroy => true
-
+  validates_uniqueness_of :national_no
+  
+  
 end

@@ -16,7 +16,7 @@ fa:
         identity_no: 'شماره شناسنامه'
         identity_serial: 'سریال شناسنامه'
         lastname: 'نام خانوادگی'
-        marital_status: 'نوع تاهل'
+        marital_status: 'وضعیت تاهل'
         national_no: 'شماره ملی'
         legal_type: 'نوع مشتری'
         title: 'عنوان'

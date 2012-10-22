@@ -3,5 +3,5 @@ class Address < ActiveRecord::Base
                   :phones, :email, :mobiles, :description, :latitude, :longitude , :person_id , :city_id
   belongs_to :city
   belongs_to :person, :polymorphic => true
-
+  #validates :email, :email_format => true
 end

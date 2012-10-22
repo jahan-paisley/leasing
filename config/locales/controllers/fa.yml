@@ -2,3 +2,10 @@
 fa:
   new_customer: 'مشتری جدید'
   list_customers: 'لیست مشتریان'
+  Back: 'بازگشت'
+  Show: 'نمایش'
+  Edit: 'ویرایش'
+  Destroy: 'حذف'
+  customers: 'لیست مشتریان'
+  edit_customer: 'ویرایش اطلاعات'
+  destroy_customer: 'حذف مشتری'
