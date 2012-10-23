@@ -21,22 +21,18 @@
       <div class="tab-content">
         <div id="pane1" class="tab-pane active">
           <h4>اطلاعات پایه</h4>
-          <%= render 'person_fields', :f=> f %>
+          <%= render 'person_fields', :f => f %>
         </div>
-        <div id="pane2" class="tab-pane">
-          <h4>آدرس</h4>
-          <%= f.fields_for :addresses do |builder| %>
-              <%= render "shared/address/address_fields", :f => builder %>
-          <% end %>
-        </div>
-        <div id="pane3" class="tab-pane">
-          <h4>آدرس</h4>
-          <%= f.fields_for :addresses do |builder| %>
-              <%= render "shared/address/address_fields", :f => builder %>
-          <% end %>
-        </div>
-
-      </div><!-- /.tab-content -->
+        <% @customer.addresses.each_with_index do |index, address| %>
+            <div id="pane<%= index %>" class="tab-pane">
+              <h4>آدرس</h4>
+              <%= f.fields_for :addresses do |builder| %>
+                  <%= render "shared/address/address_fields", :f => builder, :locals => {:address => address} %>
+              <% end %>
+            </div>
+        <% end %>
+      </div>
+      <!-- /.tab-content -->
     </div><!-- /.tabbable -->
 
     <div class="actions">
