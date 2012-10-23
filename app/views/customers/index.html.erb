@@ -31,8 +31,8 @@
     <td><%= person.identity_issue_date %></td>
     <td><%= person.identity_issue_city %></td>
     <td><%= person.legal_type %></td>
-    <td><%= person.gender %></td>
-    <td><%= person.marital_status %></td>
+    <td><%= t person.gender %></td>
+    <td><%= t person.marital_status %></td>
     <td><%= link_to (t 'Show'), person %> |</td>
     <td><%= link_to (t 'Edit'), edit_customer_path(person) %>|</td>
     <td><%= link_to (t 'Destroy'), person, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -130,7 +130,7 @@ fa:
     submit:
       create: ! 'ایجاد %{model}'
       submit: ! 'ذخیره %{model}'
-      update: ! 'بروز %{model}'
+      update: ! 'ثبت تغییرات %{model}'
   number:
     currency:
       format:

@@ -1,0 +1,17 @@
+#encoding: utf-8
+fa:
+  Ave: 'خیابان اصلی'
+  Street: 'خیایان فرعی'
+  Alley: 'کوچه'
+  Square: 'میدان'
+  Highway: 'بزرگراه'
+  Road: 'جاده'
+  Boulevard: 'بلوار'
+  Freeway: 'آزادراه'
+  Deadend: 'بن بست'
+  Workplace: 'محل کار'
+  Homeplace: 'محل سکونت'
+  Male: 'مرد'
+  Female: 'زن'
+  Married: 'متاهل'
+  Single: 'مجرد'

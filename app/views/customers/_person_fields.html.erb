@@ -40,11 +40,11 @@
 </div>
 <div class="field">
   <%= f.label :gender %>
-  <%=  f.select(:gender, options_for_select(@gender), {:prompt => '...'}) %>
+  <%= f.select(:gender, options_for_select(@gender, @customer.gender), {:prompt => '...'}) %>
 </div>
 <div class="field">
   <%= f.label :marital_status %> 
-  <%= f.select(:marital_status, options_for_select(@marital_status), {:prompt => '...'} ) %>
+  <%= f.select(:marital_status, options_for_select(@marital_status, @customer.marital_status), {:prompt => '...'} ) %>
 </div>
 <div class="field">
   <%= f.label :title %>

@@ -10,7 +10,6 @@ gem "rolify", ">= 3.2.0"
 #gem 'passenger'
 #gem 'omniauth'
 gem 'jalalidate'
-gem 'client_side_validations'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -18,10 +17,15 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem "rspec-rails", ">= 2.11.0", :group => [:development, :test]
-gem 'debugger', group: [:development, :test]
-gem "factory_girl_rails", ">= 4.0.0", :group => [:development, :test]
-gem 'sqlite3', :group => [:development, :test]
+group :development, :test do
+  gem "rspec-rails", ">= 2.11.0"
+  gem "factory_girl_rails", ">= 4.0.0"
+  gem 'sqlite3'
+  gem 'pry-remote'
+  gem 'debugger'
+  gem 'pow-debug'
+end
+
 gem 'nifty-generators', :group => [:development]
 
 group :test do

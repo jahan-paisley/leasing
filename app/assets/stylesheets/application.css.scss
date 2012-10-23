@@ -20,3 +20,16 @@ div.action{
 	clear:both;
 	right:0px;
 }
+.number, .english, .ltr{
+	direction: ltr;
+}
+.rtl{
+  direction: rtl;
+}
+
+.field_with_errors *{
+	color: red;
+}
+body{
+  background-color: #E7EBF2 !important;
+}

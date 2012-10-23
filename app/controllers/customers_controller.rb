@@ -1,10 +1,10 @@
 # encoding : utf-8
 class CustomersController < ApplicationController
   def initialize
-    @levels = [[ 'خیابان اصلی','Ave'], ['خیایان فرعی','Street' ], ['کوچه', 'Alley'] , ['میدان' ,'Square'], ['بزرگراه','Highway'],[ 'جاده', 'Road'], ['بلوار','Boulevard'],['آزادراه', 'Freeway'],['بن بست','Deadend']]
-    @address_categories = [['محل کار','Workplace'],['محل سکونت','Homeplace']]
-    @gender = [['مرد', 'Male'], ['زن', 'Female']]
-    @marital_status = [['متاهل', 'Married'], ['مجرد', 'Single']]
+    @levels = [[ 'ﺥیاﺑﺎﻥ اﺻﻞی','Ave'], ['ﺥیایاﻥ ﻓﺮﻉی','Street' ], ['کﻭچﻩ', 'Alley'] , ['ﻡیﺩاﻥ' ,'Square'], ['ﺑﺰﺭگﺭاﻩ','Highway'],[ 'ﺟﺎﺩﻩ', 'Road'], ['ﺑﻠﻮاﺭ','Boulevard'],['ﺁﺯاﺩﺭاﻩ', 'Freeway'],['ﺑﻦ ﺑﺴﺖ','Deadend']]
+    @address_categories = [['ﻣﺤﻞ کاﺭ','Workplace'],['ﻣﺤﻞ ﺱکﻭﻧﺖ','Homeplace']]
+    @gender = [['ﻣﺮﺩ', 'Male'], ['ﺯﻥ', 'Female']]
+    @marital_status = [['ﻣﺘﺎﻫﻞ', 'Married'], ['ﻣﺠﺮﺩ', 'Single']]
     super
   end
   
@@ -12,6 +12,7 @@ class CustomersController < ApplicationController
   # GET /customers.json
   def index
     @customers = Customer.all
+    @customers.each{|o| to_jalali o}
 
     respond_to do |format|
       format.html # index.html.erb
@@ -23,6 +24,8 @@ class CustomersController < ApplicationController
   # GET /customers/1.json
   def show
     @customer = Customer.find(params[:id])
+    #debugger
+    to_jalali @customer
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @customer }
@@ -46,6 +49,7 @@ class CustomersController < ApplicationController
   # GET /customers/1/edit
   def edit
     @customer = Customer.find(params[:id])
+    to_jalali @customer
   end
 
   # POST /customers
@@ -70,7 +74,7 @@ class CustomersController < ApplicationController
   # PUT /customers/1.json
   def update
     @customer = Customer.find(params[:id])
-
+    to_gregorian params
     respond_to do |format|
       if @customer.update_attributes(params[:customer])
         format.html { redirect_to @customer, notice: 'Customer was successfully updated.' }

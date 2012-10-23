@@ -3,7 +3,7 @@ module ApplicationHelper
   def to_gregorian params
     params.each {|a, f|
       if f.is_a? Hash 
-        f.each{|key, value|
+        f.each { |key, value|
           if value.is_a?(String) and /13\d{2}\/\d{1,2}\/\d{1,2}/ =~ value
             year, month, day = /(13\d{2})\/(\d{1,2})\/(\d{1,2})/.match(value).captures
             jdate = JalaliDate.new(year.to_i, month.to_i, day.to_i)
@@ -12,6 +12,16 @@ module ApplicationHelper
         }  
       end
     }
+  end
+  
+  def to_jalali arg
+    arg.attributes.each_pair do |name, value|
+      if value.is_a? Date
+        jdate = JalaliDate.new(value)
+        arg[name] = jdate.to_s
+      end
+    end
+    arg
   end
 
 end
