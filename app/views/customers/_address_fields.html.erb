@@ -1,6 +1,8 @@
+<%= self.inspect %>
 <div class="field">
   <%= f.label :category %>
-  <%= debugger %>
+  <%= address %>
+  <%= @customer %>
   <%= select_tag( :category, options_for_select(@address_categories, address.category), {:prompt => '...'}) %>
 </div>
 <div class="field">
