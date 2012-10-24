@@ -7,6 +7,6 @@ fa:
   Edit: 'ویرایش'
   Destroy: 'حذف'
   customers: 'لیست مشتریان'
-  edit_customer: 'ویرایش اطلاعات'
+  edit_customer: 'ویرایش اطلاعات مشتری'
   destroy_customer: 'حذف مشتری'
 

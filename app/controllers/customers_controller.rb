@@ -1,10 +1,10 @@
 # encoding : utf-8
 class CustomersController < ApplicationController
   def initialize
-    @levels = [[ 'ﺥیاﺑﺎﻥ اﺻﻞی','Ave'], ['ﺥیایاﻥ ﻓﺮﻉی','Street' ], ['کﻭچﻩ', 'Alley'] , ['ﻡیﺩاﻥ' ,'Square'], ['ﺑﺰﺭگﺭاﻩ','Highway'],[ 'ﺟﺎﺩﻩ', 'Road'], ['ﺑﻠﻮاﺭ','Boulevard'],['ﺁﺯاﺩﺭاﻩ', 'Freeway'],['ﺑﻦ ﺑﺴﺖ','Deadend']]
-    @address_categories = [['ﻣﺤﻞ کاﺭ','Workplace'],['ﻣﺤﻞ ﺱکﻭﻧﺖ','Homeplace']]
-    @gender = [['ﻣﺮﺩ', 'Male'], ['ﺯﻥ', 'Female']]
-    @marital_status = [['ﻣﺘﺎﻫﻞ', 'Married'], ['ﻣﺠﺮﺩ', 'Single']]
+    @levels = [[ 'خیابان اصلی','Ave'], ['خیابان فرعی','Street' ], ['کوچه', 'Alley'] , ['میدان' ,'Square'], ['بزرگراه','Highway'],[ 'جاده', 'Road'], ['بلوار','Boulevard'],['آزادراه', 'Freeway'],['بن بست','Deadend']]
+    @address_categories = [['محل کار','Workplace'],['محل سکونت','Homeplace']]
+    @gender = [['مرد', 'Male'], ['زن', 'Female']]
+    @marital_status = [['متاهل', 'Married'], ['مجرد', 'Single']]
     super
   end
   
@@ -37,7 +37,7 @@ class CustomersController < ApplicationController
   def new
                
     @customer = Customer.new
-    1.times do
+    2.times do
       @customer.addresses.build
     end
     respond_to do |format|
@@ -55,13 +55,14 @@ class CustomersController < ApplicationController
   # POST /customers
   # POST /customers.json
   def create
+
     to_gregorian (params)
     ##debugger
     @customer = Customer.new(params[:customer])
 
     respond_to do |format|
       if @customer.save
-        format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
+        format.html { redirect_to @customer, notice: (t 'success_message') }
         format.json { render json: @customer, status: :created, location: @customer }
       else
         format.html { render action: "new" }
@@ -77,7 +78,7 @@ class CustomersController < ApplicationController
     to_gregorian params
     respond_to do |format|
       if @customer.update_attributes(params[:customer])
-        format.html { redirect_to @customer, notice: 'Customer was successfully updated.' }
+        format.html { redirect_to @customer, notice: (t 'success_message')}
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

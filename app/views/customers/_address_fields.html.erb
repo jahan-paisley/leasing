@@ -1,59 +1,66 @@
-<%= self.inspect %>
-<div class="field">
-  <%= f.label :category %>
-  <%= address %>
-  <%= @customer %>
-  <%= select_tag( :category, options_for_select(@address_categories, address.category), {:prompt => '...'}) %>
-</div>
-<div class="field">
-  <%= f.label :city_id %>
-  <%= f.select( :city_id, City.all.collect {|p| [ p.name, p.id ] }, {:prompt => '...'})%>
-</div>
-<div class="field">
-  <%= f.label :level1  %>
-  <%= select_tag(:level1, options_for_select(@levels), {:prompt => '...'}) %>
-</div>
-<div class="field">
-  <%= f.label :part1 %>
-  <%= f.text_field :part1 %>
-</div>
-<div class="field">
-  <%= f.label :level2 %>
-  <%= select_tag(:level2,  options_for_select(@levels), {:prompt => '...'}) %>
-</div>
-<div class="field">
-  <%= f.label :part2 %>
-  <%= f.text_field :part2 %>
-</div>
-<div class="field">
-  <%= f.label :level3 %>
-  <%= select_tag(:level3,  options_for_select(@levels), {:prompt => '...'}) %>
-</div>
-<div class="field">
-  <%= f.label :part3 %>
-  <%= f.text_field :part3 %>
-</div>
-<div class="field">
-  <%= f.label :phones %>
-  <%= f.text_field :phones, :class => 'number' %>
-</div>
-<div class="field">
-  <%= f.label :mobiles %>
-  <%= f.text_field :mobiles, :class => 'number' %>
-</div>
-<div class="field">
-  <%= f.label :email %>
-  <%= f.text_field :email , :class => 'english'%>
-</div>
-<div class="field hidden">
-  <%= f.label :latitude %>
-  <%= f.hidden_field :latitude %>
-</div>
-<div class="field hidden">
-  <%= f.label :longitude %>
-  <%= f.hidden_field :longitude %>
-</div>
-<div class="field">
-  <%= f.label :description %>
-  <%= f.text_area(:description, :size => '50x5') %>
-</div>
+<% @customer.addresses.each_with_index do |address,index| %>
+
+    <%= customer_form.fields_for :addresses, address do |address_fields| %>
+
+        <div id="pane<%=index+2%>" class="tab-pane">
+          <h4>آدرس</h4>
+
+          <div class="field">
+            <%= address_fields.label :category %>
+            <%= address_fields.select :category, @address_categories, {:prompt => '...'} %>
+          </div>
+          <div class="field">
+            <%= address_fields.label :city_id %>
+            <%= address_fields.select(:city_id, City.all.collect { |p| [p.name, p.id] }, {:prompt => '...'}) %>
+          </div>
+          <div class="field">
+            <%= address_fields.label :level1 %>
+            <%= address_fields.select :level1, @levels, {:prompt => '...'} %>
+          </div>
+          <div class="field">
+            <%= address_fields.label :part1 %>
+            <%= address_fields.text_field :part1 %>
+          </div>
+          <div class="field">
+            <%= address_fields.label :level2 %>
+            <%= address_fields.select :level2, @levels, {:prompt => '...'} %>
+          </div>
+          <div class="field">
+            <%= address_fields.label :part2 %>
+            <%= address_fields.text_field :part2 %>
+          </div>
+          <div class="field">
+            <%= address_fields.label :level3 %>
+            <%= address_fields.select :level3, @levels, {:prompt => '...'} %>
+          </div>
+          <div class="field">
+            <%= address_fields.label :part3 %>
+            <%= address_fields.text_field :part3 %>
+          </div>
+          <div class="field">
+            <%= address_fields.label :phones %>
+            <%= address_fields.text_field :phones, :class => 'number' %>
+          </div>
+          <div class="field">
+            <%= address_fields.label :mobiles %>
+            <%= address_fields.text_field :mobiles, :class => 'number' %>
+          </div>
+          <div class="field">
+            <%= address_fields.label :email %>
+            <%= address_fields.text_field :email, :class => 'english' %>
+          </div>
+          <div class="field hidden">
+            <%= address_fields.label :latitude %>
+            <%= address_fields.hidden_field :latitude %>
+          </div>
+          <div class="field hidden">
+            <%= address_fields.label :longitude %>
+            <%= address_fields.hidden_field :longitude %>
+          </div>
+          <div class="field">
+            <%= address_fields.label :description %>
+            <%= address_fields.text_area(:description, :size => '50x5') %>
+          </div>
+        </div>
+    <% end %>
+<% end %>
