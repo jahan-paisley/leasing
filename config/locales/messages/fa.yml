@@ -1,2 +1,5 @@
 fa:
+  errors:
+    messages:
+      email: "ایمیل صحیح نیست"
   success_message: 'عملیات با موفقیت انجام شد.'

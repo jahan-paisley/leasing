@@ -7,7 +7,7 @@ class CustomersController < ApplicationController
     @marital_status = [['متاهل', 'Married'], ['مجرد', 'Single']]
     super
   end
-  
+
   # GET /customers
   # GET /customers.json
   def index
@@ -58,7 +58,7 @@ class CustomersController < ApplicationController
 
     to_gregorian (params)
     ##debugger
-    @customer = Customer.new(params[:customer])
+    @customer = Customer.new params[:customer]
 
     respond_to do |format|
       if @customer.save

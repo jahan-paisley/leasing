@@ -13,5 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require_tree .
-
+//= requrie jalali.js
+//= requrie calendar.js
+//= requrie calendar-setup.js
+//= requrie calendar-fa.js
+//= requrie person.js.coffee
+//= requrie rails.validations.js
+//= requrie rails.validations.customValidators.js
+//= requrie self

@@ -7,15 +7,15 @@
 
           <div class="field">
             <%= address_fields.label :category %>
-            <%= address_fields.select :category, @address_categories, {:prompt => '...'} %>
+            <%= address_fields.select :category, @address_categories, {:include_blank => true} %>
           </div>
           <div class="field">
             <%= address_fields.label :city_id %>
-            <%= address_fields.select(:city_id, City.all.collect { |p| [p.name, p.id] }, {:prompt => '...'}) %>
+            <%= address_fields.select(:city_id, City.all.collect { |p| [p.name, p.id] }, {:include_blank => true}) %>
           </div>
           <div class="field">
             <%= address_fields.label :level1 %>
-            <%= address_fields.select :level1, @levels, {:prompt => '...'} %>
+            <%= address_fields.select :level1, @levels, {:include_blank => true} %>
           </div>
           <div class="field">
             <%= address_fields.label :part1 %>
@@ -23,7 +23,7 @@
           </div>
           <div class="field">
             <%= address_fields.label :level2 %>
-            <%= address_fields.select :level2, @levels, {:prompt => '...'} %>
+            <%= address_fields.select :level2, @levels, {:include_blank => true} %>
           </div>
           <div class="field">
             <%= address_fields.label :part2 %>
@@ -31,7 +31,7 @@
           </div>
           <div class="field">
             <%= address_fields.label :level3 %>
-            <%= address_fields.select :level3, @levels, {:prompt => '...'} %>
+            <%= address_fields.select :level3, @levels, {:include_blank => true} %>
           </div>
           <div class="field">
             <%= address_fields.label :part3 %>

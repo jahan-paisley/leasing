@@ -8,9 +8,20 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require theme.css
+ *= require calendar-theme.css
+ *= require bootstrap-rtl.min.css
+ *= require bootstrap-responsive-rtl.min.css
+ *= require rtl.css
  *= require_self
- *= require_tree .
 */
+
+@font-face {
+  font-family: 'B Yekan';
+  src:url('http://www.font-api.ir/fontsdir/47.eot?#') format('eot'),
+  url('http://www.font-api.ir/fontsdir/47.woff') format('woff'),
+  url('http://www.font-api.ir/fontsdir/47.ttf') format('truetype');
+}
 
 div.field{
 	float:right;
@@ -30,6 +41,4 @@ div.action{
 .field_with_errors *{
 	color: red;
 }
-body{
-  background-color: #E7EBF2 !important;
-}
+

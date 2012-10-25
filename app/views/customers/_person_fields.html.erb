@@ -40,11 +40,11 @@
 </div>
 <div class="field">
   <%= customer_form.label :gender %>
-  <%= customer_form.select(:gender, options_for_select(@gender, @customer.gender), {:prompt => '...'}) %>
+  <%= customer_form.select(:gender, options_for_select(@gender, @customer.gender), {:include_blank => true}) %>
 </div>
 <div class="field">
   <%= customer_form.label :marital_status %> 
-  <%= customer_form.select(:marital_status, options_for_select(@marital_status, @customer.marital_status), {:prompt => '...'} ) %>
+  <%= customer_form.select(:marital_status, options_for_select(@marital_status, @customer.marital_status), {:include_blank => true} ) %>
 </div>
 <div class="field">
   <%= customer_form.label :title %>
