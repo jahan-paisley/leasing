@@ -15,7 +15,7 @@ class Person < ActiveRecord::Base
   accepts_nested_attributes_for :addresses, :allow_destroy => true
 
   validates_uniqueness_of :national_no
-  validates_presence_of :firstname, :lastname, :birthdate, :gender, :national_no
+  validates_presence_of :firstname, :lastname, :gender, :national_no
   validates_inclusion_of :gender, :in => lambda { |o| GENDERS }
   validates_inclusion_of :marital_status, :in => lambda { |o| MARITAL_STATUSES }
 

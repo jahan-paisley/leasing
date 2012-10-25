@@ -21,3 +21,4 @@
 //= requrie rails.validations.js
 //= requrie rails.validations.customValidators.js
 //= requrie self
+

@@ -57,7 +57,7 @@ class CustomersController < ApplicationController
   def create
 
     to_gregorian (params)
-    ##debugger
+    debugger
     @customer = Customer.new params[:customer]
 
     respond_to do |format|

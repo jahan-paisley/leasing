@@ -197,5 +197,5 @@ fa:
   activerecord:
     errors:
       <<: *errors
-  application: 'سلامت جوان'
+  application: 'راهبر ایرانیان'
  
