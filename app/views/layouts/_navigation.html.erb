@@ -98,9 +98,9 @@
           <% end %>
         </ul>
 
-
-        <p class="navbar-text pull-right">کاربر جاری: <a href="#"><%= current_user.name %></a></p>
-
+        <% if user_signed_in? %>
+            <p class="navbar-text pull-right">کاربر جاری: <a href="#"><%= current_user.name %></a></p>
+        <% end %>
         <div class="divider-vertical"></div>
         <p class="navbar-text pull-right"><%= link_to 'خروج', destroy_user_session_path, :method => 'delete' %></p>
 
