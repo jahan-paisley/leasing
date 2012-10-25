@@ -238,7 +238,7 @@ DEPENDENCIES
   pow-debug
   pry-remote
   rails (= 3.2.8)
-  rolify (>= 3.2.0)
+  rolify
   rspec-rails (>= 2.11.0)
   sass-rails (~> 3.2.3)
   sqlite3
