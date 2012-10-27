@@ -2,6 +2,7 @@
     <%= customer_form.fields_for :addresses, address do |address_fields| %>
         <div id="pane<%= index+2 %>" class="tab-pane">
           <h4>آدرس</h4>
+
           <div class="field">
             <%= address_fields.label :category %>
             <%= address_fields.select :category, address_categories_options, {:include_blank => true} %>
@@ -37,7 +38,7 @@
 
           <div class="field">
             <%= address_fields.label :address_no %>
-            <%= address_fields.text_field :address_no , :class => 'number'%>
+            <%= address_fields.text_field :address_no, :class => 'number' %>
           </div>
 
           <div class="field">
