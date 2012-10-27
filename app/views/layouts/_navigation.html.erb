@@ -58,6 +58,8 @@
                   <%# end %>
                 </ul>
               </li>
+
+
           <% end %>
           <!--
           <li class="dropdown">
@@ -74,35 +76,46 @@
           </li>
           -->
 
-          <li><a href="#about">دریاره ما</a></li>
+          <li><a href="#about">درباره ما</a></li>
           <li><a href="#contact">تماس با ما</a></li>
-          <% if user_signed_in? %>
-
-              <li>
-                <%= link_to 'Logout', destroy_user_session_path, :method => 'delete' %>
-              </li>
-          <% else %>
-              <li>
-                <%= link_to 'Login', new_user_session_path %>
-              </li>
-          <% end %>
-          <% if user_signed_in? %>
-              <li>
-                <%= link_to 'Edit account', edit_user_registration_path %>
-              </li>
-
-          <% else %>
-              <li>
-                <%= link_to 'Sign up', new_user_registration_path %>
-              </li>
-          <% end %>
         </ul>
+        <ul class="nav pull-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <% if user_signed_in? %>
+                  کاربر جاری: <%= current_user.name %>
+              <% else %>
+                ورود
+              <% end %>
 
-        <% if user_signed_in? %>
-            <p class="navbar-text pull-right">کاربر جاری: <a href="#"><%= current_user.name %></a></p>
-        <% end %>
-        <div class="divider-vertical"></div>
-        <p class="navbar-text pull-right"><%= link_to 'خروج', destroy_user_session_path, :method => 'delete' %></p>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <% unless user_signed_in? %>
+
+                  <li>
+                    <%= link_to 'Login', new_user_session_path %>
+                  </li>
+                  <li>
+                    <%= link_to 'Sign up', new_user_registration_path %>
+                  </li>
+              <% end %>
+              <% if user_signed_in? %>
+
+                  <li>
+                    <%= link_to 'Logout', destroy_user_session_path, :method => 'delete' %>
+                  </li>
+                  <li>
+                    <%= link_to 'Edit account', edit_user_registration_path %>
+                  </li>
+
+                  <li>
+                    <%= link_to 'خروج', destroy_user_session_path, :method => 'delete' %>
+                  </li>
+              <% end %>
+            </ul>
+          </li>
+        </ul>
 
         <!--<form class="navbar-form pull-right">-->
         <!--<input class="span2" type="text" placeholder="ایمیل">-->

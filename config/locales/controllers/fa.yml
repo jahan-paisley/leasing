@@ -8,7 +8,7 @@ fa:
   Destroy: 'حذف'
   customers: 'لیست مشتریان'
   edit_customer: 'ویرایش اطلاعات مشتری'
-  destroy_customer:
+  destroy_customer: 'حذف مشتری'
   new_user_registration: 'کاربر جدید'
   edit_user_registration: 'وبرایش اطلاعات کاربر'
   user: 'نمایش اطلاعات کاربر'

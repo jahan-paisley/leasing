@@ -20,3 +20,7 @@ fa:
         mobiles: 'موبایل ها'
         latitude: 'عرض'
         longitude: 'طول'
+        postal_code: 'کد پستی'
+        unit_name: 'واحد'
+        building_name: 'ساختمان'
+        address_no: 'پلاک'

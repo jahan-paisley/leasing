@@ -1,18 +1,12 @@
 # encoding : utf-8
 class CustomersController < ApplicationController
-  def initialize
-    @levels = [[ 'خیابان اصلی','Ave'], ['خیابان فرعی','Street' ], ['کوچه', 'Alley'] , ['میدان' ,'Square'], ['بزرگراه','Highway'],[ 'جاده', 'Road'], ['بلوار','Boulevard'],['آزادراه', 'Freeway'],['بن بست','Deadend']]
-    @address_categories = [['محل کار','Workplace'],['محل سکونت','Homeplace']]
-    @gender = [['مرد', 'Male'], ['زن', 'Female']]
-    @marital_status = [['متاهل', 'Married'], ['مجرد', 'Single']]
-    super
-  end
+  include CustomerHelper
 
   # GET /customers
   # GET /customers.json
   def index
     @customers = Customer.all
-    @customers.each{|o| to_jalali o}
+    @customers.each { |o| to_jalali o }
 
     respond_to do |format|
       format.html # index.html.erb
@@ -35,7 +29,7 @@ class CustomersController < ApplicationController
   # GET /customers/new
   # GET /customers/new.json
   def new
-               
+
     @customer = Customer.new
     2.times do
       @customer.addresses.build
@@ -78,7 +72,7 @@ class CustomersController < ApplicationController
     to_gregorian params
     respond_to do |format|
       if @customer.update_attributes(params[:customer])
-        format.html { redirect_to @customer, notice: (t 'success_message')}
+        format.html { redirect_to @customer, notice: (t 'success_message') }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
