@@ -1,6 +1,6 @@
 <h1><%= t :list_customers%></h1>
 
-<table>
+<table id="list-table">
   <tr>
     <th><%= t 'activerecord.attributes.person.firstname'%> | </th>
     <th><%= t 'activerecord.attributes.person.lastname'%> | </th>
@@ -11,7 +11,7 @@
     <th><%= t 'activerecord.attributes.person.fathername'%> | </th>
     <th><%= t 'activerecord.attributes.person.identity_issue_date'%> | </th>
     <th><%= t 'activerecord.attributes.person.identity_issue_city'%> | </th>
-    <th><%= t 'activerecord.attributes.person.legal_type'%> | </th>
+    <!--<th><%#= t 'activerecord.attributes.customer.legal_type'%> | </th>-->
     <th><%= t 'activerecord.attributes.person.gender'%> | </th>
     <th><%= t 'activerecord.attributes.person.marital_status'%></th>
     <th></th>
@@ -30,7 +30,7 @@
     <td><%= person.fathername %></td>
     <td><%= person.identity_issue_date %></td>
     <td><%= person.identity_issue_city %></td>
-    <td><%= person.legal_type %></td>
+    <!--<td><%#= person.legal_type %></td>-->
     <td><%= t person.gender %></td>
     <td><%= t person.marital_status %></td>
     <td><%= link_to (t 'Show'), person %> |</td>

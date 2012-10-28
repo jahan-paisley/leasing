@@ -2,8 +2,7 @@
 
 FactoryGirl.define do
   factory :address do
-    person nil
-    city nil
+    city
     category "MyString"
     level1 "MyString"
     part1 "MyString"

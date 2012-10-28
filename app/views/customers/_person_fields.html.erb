@@ -1,73 +1,78 @@
-<div class="field">
-  <%= customer_form.label :firstname %>
-  <%= customer_form.text_field :firstname %>
-</div>
-<div class="field">
-  <%= customer_form.label :lastname %>
-  <%= customer_form.text_field :lastname %>
-</div>
-<div class="field">
-  <%= customer_form.label :identity_no %>
-  <%= customer_form.text_field :identity_no %>
-</div>
-<div class="field">
-  <%= customer_form.label :national_no %>
-  <%= customer_form.text_field :national_no %>
-</div>
-<div class="field">
-  <%= customer_form.label :birthdate %>
-  <%= customer_form.text_field :birthdate, :class => "date" %>
-</div>
-<div class="field">
-  <%= customer_form.label :identity_serial %>
-  <%= customer_form.text_field :identity_serial %>
-</div>
-<div class="field">
-  <%= customer_form.label :fathername %>
-  <%= customer_form.text_field :fathername %>
-</div>
-<div class="field">
-  <%= customer_form.label :identity_issue_date %>
-  <%= customer_form.text_field :identity_issue_date, :class => "date" %>
-</div>
-<div class="field">
-  <%= customer_form.label :identity_issue_city %>
-  <%= customer_form.text_field :identity_issue_city %>
-</div>
-<div class="field">
-  <%= customer_form.label :legal_type %> 
-  <%= customer_form.text_field :legal_type %>
-</div>
-<div class="field">
-  <%= customer_form.label :gender %>
-  <%= customer_form.select(:gender, person_genders_options, {:include_blank => true}) %>
-</div>
-<div class="field">
-  <%= customer_form.label :marital_status %> 
-  <%= customer_form.select(:marital_status, person_marital_statuses_options, {:include_blank => true} ) %>
-</div>
-<div class="field">
-  <%= customer_form.label :title %>
-  <%= customer_form.text_field :title %>
-</div>
-<div class="field">
-  <%= customer_form.label :job_title %>
-  <%= customer_form.text_field :job_title %>
-</div>
-<div class="field">
-  <%= customer_form.label :job_position %>
-  <%= customer_form.text_field :job_position %>
-</div>
+<%= customer_form.fields_for :person do |person_fields| %>
+    <div id="pane1" class="tab-pane active">
+      <h4>اطلاعات پایه</h4>
 
-<div class="field">
-  <%= customer_form.label :job_company %>
-  <%= customer_form.text_field :job_company %>
-</div>
-<div class="field">
-  <%= customer_form.label :job_industry %>
-  <%= customer_form.text_field :job_industry %>
-</div>
-<div class="field">
-  <%= customer_form.label :education %>
-  <%= customer_form.text_field :education %>
-</div>
+      <div class="field">
+        <%= person_fields.label :firstname %>
+        <%= person_fields.text_field :firstname %>
+      </div>
+      <div class="field">
+        <%= person_fields.label :lastname %>
+        <%= person_fields.text_field :lastname %>
+      </div>
+      <div class="field">
+        <%= person_fields.label :identity_no %>
+        <%= person_fields.text_field :identity_no %>
+      </div>
+      <div class="field">
+        <%= person_fields.label :national_no %>
+        <%= person_fields.text_field :national_no %>
+      </div>
+      <div class="field">
+        <%= person_fields.label :birthdate %>
+        <%= person_fields.text_field :birthdate, :class => "date" %>
+      </div>
+      <div class="field">
+        <%= person_fields.label :identity_serial %>
+        <%= person_fields.text_field :identity_serial %>
+      </div>
+      <div class="field">
+        <%= person_fields.label :fathername %>
+        <%= person_fields.text_field :fathername %>
+      </div>
+      <div class="field">
+        <%= person_fields.label :identity_issue_date %>
+        <%= person_fields.text_field :identity_issue_date, :class => "date" %>
+      </div>
+      <div class="field">
+        <%= person_fields.label :identity_issue_city %>
+        <%= person_fields.text_field :identity_issue_city %>
+      </div>
+      <div class="field">
+        <%= person_fields.label :gender %>
+        <%= person_fields.select(:gender, person_genders_options, {:include_blank => true}) %>
+      </div>
+      <div class="field">
+        <%= person_fields.label :marital_status %>
+        <%= person_fields.select(:marital_status, person_marital_statuses_options, {:include_blank => true}) %>
+      </div>
+      <div class="field">
+        <%= person_fields.label :title %>
+        <%= person_fields.text_field :title %>
+      </div>
+      <div class="field">
+        <%= person_fields.label :job_title %>
+        <%= person_fields.text_field :job_title %>
+      </div>
+      <div class="field">
+        <%= person_fields.label :job_position %>
+        <%= person_fields.text_field :job_position %>
+      </div>
+
+      <div class="field">
+        <%= person_fields.label :job_company %>
+        <%= person_fields.text_field :job_company %>
+      </div>
+      <div class="field">
+        <%= person_fields.label :job_industry %>
+        <%= person_fields.text_field :job_industry %>
+      </div>
+      <div class="field">
+        <%= person_fields.label :education %>
+        <%= person_fields.text_field :education %>
+      </div>
+    </div>
+
+    <%= render "address_fields", :person_form => person_fields %>
+
+<% end %>

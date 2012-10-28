@@ -13,27 +13,15 @@
 
     <div class="tabbable">
       <ul class="nav nav-tabs">
-        <li class="active">
-          <a href="#pane1" data-toggle="tab">اطلاعات مشتری</a>
-        </li>
+        <li class="active"><a href="#pane1" data-toggle="tab">اطلاعات مشتری</a></li>
         <li><a href="#pane2" data-toggle="tab">آدرس اول</a></li>
         <li><a href="#pane3" data-toggle="tab">آدرس دوم</a></li>
       </ul>
       <div class="tab-content">
-
-        <div id="pane1" class="tab-pane active">
-          <h4>اطلاعات پایه</h4>
-          <%= render 'person_fields', :customer_form => customer_form %>
-        </div>
-
-        <%= render "address_fields", :customer_form => customer_form %>
+        <%= render 'person_fields', :customer_form => customer_form %>
       </div>
-
-      <!-- /.tab-content -->
-    </div><!-- /.tabbable -->
-
+    </div>
     <div class="actions">
       <%= customer_form.submit %>
     </div>
-
 <% end %>

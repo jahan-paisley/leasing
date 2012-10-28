@@ -24,3 +24,4 @@ fa:
         unit_name: 'واحد'
         building_name: 'ساختمان'
         address_no: 'پلاک'
+        district: 'محله/منطقه'

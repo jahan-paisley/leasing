@@ -31,8 +31,11 @@ class CustomersController < ApplicationController
   def new
 
     @customer = Customer.new
+    #debugger
+    @customer.person = Person.new
+
     2.times do
-      @customer.addresses.build
+      @customer.person.addresses.build
     end
     respond_to do |format|
       format.html # new.html.erb
@@ -51,7 +54,7 @@ class CustomersController < ApplicationController
   def create
 
     to_gregorian (params)
-    debugger
+    #debugger
     @customer = Customer.new params[:customer]
 
     respond_to do |format|

@@ -1,5 +1,5 @@
-<% @customer.addresses.each_with_index do |address, index| %>
-    <%= customer_form.fields_for :addresses, address do |address_fields| %>
+<% @customer.person.addresses.each_with_index do |address, index| %>
+    <%= person_form.fields_for :addresses, address do |address_fields| %>
         <div id="pane<%= index+2 %>" class="tab-pane">
           <h4>آدرس</h4>
 
@@ -8,9 +8,18 @@
             <%= address_fields.select :category, address_categories_options, {:include_blank => true} %>
           </div>
           <div class="field">
+
+          </div>
+          <div class="field">
             <%= address_fields.label :city_id %>
             <%= address_fields.select(:city_id, City.all.collect { |p| [p.name, p.id] }, {:include_blank => true}) %>
           </div>
+
+          <div class="field">
+            <%= address_fields.label :district %>
+            <%= address_fields.text_field :district %>
+          </div>
+
           <div class="field">
             <%= address_fields.label :level1 %>
             <%= address_fields.select :level1, address_levels_options, {:include_blank => true} %>

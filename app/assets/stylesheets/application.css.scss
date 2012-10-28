@@ -18,27 +18,32 @@
 
 @font-face {
   font-family: 'B Yekan';
-  src:url('http://www.font-api.ir/fontsdir/47.eot?#') format('eot'),
-  url('http://www.font-api.ir/fontsdir/47.woff') format('woff'),
-  url('http://www.font-api.ir/fontsdir/47.ttf') format('truetype');
+  src: url('http://www.font-api.ir/fontsdir/47.eot?#') format('eot'), url('http://www.font-api.ir/fontsdir/47.woff') format('woff'), url('http://www.font-api.ir/fontsdir/47.ttf') format('truetype');
 }
 
-div.field{
-	float:right;
-	width: 50% !important;
+div.field {
+  float: right;
+  min-width: 50% !important;
+  min-height: 60px !important;
 }
-div.action{
-	clear:both;
-	right:0px;
+
+div.action {
+  clear: both;
+  right: 0px;
 }
-.number, .english, .ltr{
-	direction: ltr;
+
+.number, .english, .ltr {
+  direction: ltr;
 }
-.rtl{
+
+.rtl {
   direction: rtl;
 }
 
-.field_with_errors *{
-	color: red;
+.field_with_errors * {
+  color: red;
 }
 
+#list-table {
+  width: 90%;
+}

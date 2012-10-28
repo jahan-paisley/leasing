@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121025082655) do
+ActiveRecord::Schema.define(:version => 20121027115106) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "person_id"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20121025082655) do
     t.string   "unit_name"
     t.string   "building_name"
     t.string   "address_no"
+    t.string   "district"
   end
 
   add_index "addresses", ["city_id"], :name => "index_addresses_on_city_id"
@@ -49,6 +50,15 @@ ActiveRecord::Schema.define(:version => 20121025082655) do
 
   add_index "cities", ["province_id"], :name => "index_cities_on_province_id"
 
+  create_table "customers", :force => true do |t|
+    t.string   "legal_type"
+    t.integer  "person_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "customers", ["person_id"], :name => "index_customers_on_person_id"
+
   create_table "persons", :force => true do |t|
     t.string   "firstname"
     t.string   "lastname"
@@ -59,7 +69,6 @@ ActiveRecord::Schema.define(:version => 20121025082655) do
     t.string   "fathername"
     t.date     "identity_issue_date"
     t.string   "identity_issue_city"
-    t.string   "legal_type"
     t.string   "gender"
     t.string   "marital_status"
     t.string   "title"
