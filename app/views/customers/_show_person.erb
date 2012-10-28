@@ -20,7 +20,7 @@
 </div>
 <div class='field'>
 	<p>
-		<b><%= Person.human_attribute_name("birthdate") %>:</b> <label class="ltr"><%= @customer.person.birthdate.to_s.gsub('-', '/') %></label>
+		<b><%= Person.human_attribute_name("birthdate") %>:</b> <%= @customer.person.birthdate.to_s.gsub('-', '/') %>
 	</p>
 </div>
 <div class='field'>
@@ -35,7 +35,7 @@
 </div>
 <div class='field'>
 	<p>
-		<b><%= Person.human_attribute_name("identity_issue_date") %>:</b> <label class="ltr"><%= @customer.person.identity_issue_date.to_s.gsub('-', '/') %></label>
+		<b><%= Person.human_attribute_name("identity_issue_date") %>:</b> <%= @customer.person.identity_issue_date.to_s.gsub('-', '/') %>
 	</p>
 </div>
 <div class='field'>
