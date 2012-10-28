@@ -6,7 +6,7 @@ class Address < ActiveRecord::Base
                   :postal_code, :unit_name, :building_name, :address_no, :district
 
   belongs_to :city
-  belongs_to :person, :polymorphic => true
+  belongs_to :person
   validates_inclusion_of :level1, :level2, :level3, :in => lambda { |o| LEVELS}
   validates_inclusion_of :category, :in => lambda { |o| CATEGORIES }
 end

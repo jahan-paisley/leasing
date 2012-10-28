@@ -13,5 +13,6 @@ user2 = User.create! :name => 'Second User', :email => 'user2@example.com', :pas
 puts 'New user created: ' << user2.name
 user.add_role :admin
 
+puts 'SETTING UP CITIES'
 cities = ['تهران','کرج','شیراز','اصفهان']
 cities.each { |o| City.create! :name => o  }

@@ -4,7 +4,7 @@ fa:
     models:
       address: 'آدرس'
     attributes:
-      address:
+      address: &address_atts
         category: 'نوع آدرس'
         city_id: 'شهر'
         priority: 'اولویت'
@@ -25,3 +25,5 @@ fa:
         building_name: 'ساختمان'
         address_no: 'پلاک'
         district: 'محله/منطقه'
+      person/addresses:
+        <<: *address_atts

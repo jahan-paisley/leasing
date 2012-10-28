@@ -1,93 +1,93 @@
 <% @customer.person.addresses.each_with_index do |address, index| %>
-    <%= person_form.fields_for :addresses, address do |address_fields| %>
+    <%= person_form.fields_for :addresses, address do |f| %>
         <div id="pane<%= index+2 %>" class="tab-pane">
           <h4>آدرس</h4>
 
           <div class="field">
-            <%= address_fields.label :category %>
-            <%= address_fields.select :category, address_categories_options, {:include_blank => true} %>
+            <%= f.label :category %>
+            <%= f.select :category, address_categories_options, {:include_blank => true} %>
           </div>
           <div class="field">
 
           </div>
           <div class="field">
-            <%= address_fields.label :city_id %>
-            <%= address_fields.select(:city_id, City.all.collect { |p| [p.name, p.id] }, {:include_blank => true}) %>
+            <%= f.label :city_id %>
+            <%= f.select(:city_id, City.all.collect { |p| [p.name, p.id] }, {:include_blank => true}) %>
           </div>
 
           <div class="field">
-            <%= address_fields.label :district %>
-            <%= address_fields.text_field :district %>
+            <%= f.label :district %>
+            <%= f.text_field :district %>
           </div>
 
           <div class="field">
-            <%= address_fields.label :level1 %>
-            <%= address_fields.select :level1, address_levels_options, {:include_blank => true} %>
+            <%= f.label :level1 %>
+            <%= f.select :level1, address_levels_options, {:include_blank => true} %>
           </div>
           <div class="field">
-            <%= address_fields.label :part1 %>
-            <%= address_fields.text_field :part1 %>
+            <%= f.label :part1 %>
+            <%= f.text_field :part1 %>
           </div>
           <div class="field">
-            <%= address_fields.label :level2 %>
-            <%= address_fields.select :level2, address_levels_options, {:include_blank => true} %>
+            <%= f.label :level2 %>
+            <%= f.select :level2, address_levels_options, {:include_blank => true} %>
           </div>
           <div class="field">
-            <%= address_fields.label :part2 %>
-            <%= address_fields.text_field :part2 %>
+            <%= f.label :part2 %>
+            <%= f.text_field :part2 %>
           </div>
           <div class="field">
-            <%= address_fields.label :level3 %>
-            <%= address_fields.select :level3, address_levels_options, {:include_blank => true} %>
+            <%= f.label :level3 %>
+            <%= f.select :level3, address_levels_options, {:include_blank => true} %>
           </div>
           <div class="field">
-            <%= address_fields.label :part3 %>
-            <%= address_fields.text_field :part3 %>
-          </div>
-
-          <div class="field">
-            <%= address_fields.label :address_no %>
-            <%= address_fields.text_field :address_no, :class => 'number' %>
+            <%= f.label :part3 %>
+            <%= f.text_field :part3 %>
           </div>
 
           <div class="field">
-            <%= address_fields.label :postal_code %>
-            <%= address_fields.text_field :postal_code, :calss => 'number' %>
+            <%= f.label :address_no %>
+            <%= f.text_field :address_no, :class => 'number' %>
           </div>
 
           <div class="field">
-            <%= address_fields.label :unit_name %>
-            <%= address_fields.text_field :unit_name %>
+            <%= f.label :postal_code %>
+            <%= f.text_field :postal_code, :calss => 'number' %>
           </div>
 
           <div class="field">
-            <%= address_fields.label :building_name %>
-            <%= address_fields.text_field :building_name %>
+            <%= f.label :unit_name %>
+            <%= f.text_field :unit_name %>
           </div>
 
           <div class="field">
-            <%= address_fields.label :phones %>
-            <%= address_fields.text_field :phones, :class => 'number' %>
+            <%= f.label :building_name %>
+            <%= f.text_field :building_name %>
+          </div>
+
+          <div class="field">
+            <%= f.label :phones %>
+            <%= f.text_field :phones, :class => 'number' %>
           </div>
           <div class="field">
-            <%= address_fields.label :mobiles %>
-            <%= address_fields.text_field :mobiles, :class => 'number' %>
+            <%= f.label :mobiles %>
+            <%= f.text_field :mobiles, :class => 'number' %>
           </div>
           <div class="field">
-            <%= address_fields.label :email %>
-            <%= address_fields.text_field :email, :class => 'english' %>
+            <%= f.label :email %>
+            <%= f.text_field :email, :class => 'english' %>
           </div>
           <div class="field hidden">
-            <%= address_fields.label :latitude %>
-            <%= address_fields.hidden_field :latitude %>
+            <%= f.label :latitude %>
+            <%= f.hidden_field :latitude %>
           </div>
           <div class="field hidden">
-            <%= address_fields.label :longitude %>
-            <%= address_fields.hidden_field :longitude %>
+            <%= f.label :longitude %>
+            <%= f.hidden_field :longitude %>
           </div>
           <div class="field">
-            <%= address_fields.label :description %>
-            <%= address_fields.text_area(:description, :size => '50x5') %>
+            <%= f.label :description %>
+            <%= f.text_area(:description, :size => '50x5') %>
           </div>
         </div>
     <% end %>

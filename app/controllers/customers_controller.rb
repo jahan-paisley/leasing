@@ -31,12 +31,11 @@ class CustomersController < ApplicationController
   def new
 
     @customer = Customer.new
-    #debugger
-    @customer.person = Person.new
-
+    @customer.build_person
     2.times do
       @customer.person.addresses.build
     end
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @customer }
@@ -52,10 +51,10 @@ class CustomersController < ApplicationController
   # POST /customers
   # POST /customers.json
   def create
-
+    #debugger
     to_gregorian (params)
     #debugger
-    @customer = Customer.new params[:customer]
+    @customer = Customer.new(params[:customer])
 
     respond_to do |format|
       if @customer.save

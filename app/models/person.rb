@@ -8,7 +8,7 @@ class Person < ActiveRecord::Base
                   :title, :job_title, :job_position, :job_company,
                   :job_industry, :education, :addresses_attributes
   #:primary_address_id
-
+  has_one :customer
   has_many :addresses, :dependent => :destroy
   #has_one :primary_address, :class_name => 'Address'
 

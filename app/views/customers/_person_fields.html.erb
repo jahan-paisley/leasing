@@ -1,78 +1,78 @@
-<%= customer_form.fields_for :person do |person_fields| %>
+<%= customer_form.fields_for :person do |f| %>
     <div id="pane1" class="tab-pane active">
       <h4>اطلاعات پایه</h4>
 
       <div class="field">
-        <%= person_fields.label :firstname %>
-        <%= person_fields.text_field :firstname %>
+        <%= f.label :firstname %>
+        <%= f.text_field :firstname %>
       </div>
       <div class="field">
-        <%= person_fields.label :lastname %>
-        <%= person_fields.text_field :lastname %>
+        <%= f.label :lastname %>
+        <%= f.text_field :lastname %>
       </div>
       <div class="field">
-        <%= person_fields.label :identity_no %>
-        <%= person_fields.text_field :identity_no %>
+        <%= f.label :identity_no %>
+        <%= f.text_field :identity_no %>
       </div>
       <div class="field">
-        <%= person_fields.label :national_no %>
-        <%= person_fields.text_field :national_no %>
+        <%= f.label :national_no %>
+        <%= f.text_field :national_no %>
       </div>
       <div class="field">
-        <%= person_fields.label :birthdate %>
-        <%= person_fields.text_field :birthdate, :class => "date" %>
+        <%= f.label :birthdate %>
+        <%= f.text_field :birthdate, :class => "date" %>
       </div>
       <div class="field">
-        <%= person_fields.label :identity_serial %>
-        <%= person_fields.text_field :identity_serial %>
+        <%= f.label :identity_serial %>
+        <%= f.text_field :identity_serial %>
       </div>
       <div class="field">
-        <%= person_fields.label :fathername %>
-        <%= person_fields.text_field :fathername %>
+        <%= f.label :fathername %>
+        <%= f.text_field :fathername %>
       </div>
       <div class="field">
-        <%= person_fields.label :identity_issue_date %>
-        <%= person_fields.text_field :identity_issue_date, :class => "date" %>
+        <%= f.label :identity_issue_date %>
+        <%= f.text_field :identity_issue_date, :class => "date" %>
       </div>
       <div class="field">
-        <%= person_fields.label :identity_issue_city %>
-        <%= person_fields.text_field :identity_issue_city %>
+        <%= f.label :identity_issue_city %>
+        <%= f.text_field :identity_issue_city %>
       </div>
       <div class="field">
-        <%= person_fields.label :gender %>
-        <%= person_fields.select(:gender, person_genders_options, {:include_blank => true}) %>
+        <%= f.label :gender %>
+        <%= f.select(:gender, person_genders_options, {:include_blank => true}) %>
       </div>
       <div class="field">
-        <%= person_fields.label :marital_status %>
-        <%= person_fields.select(:marital_status, person_marital_statuses_options, {:include_blank => true}) %>
+        <%= f.label :marital_status %>
+        <%= f.select(:marital_status, person_marital_statuses_options, {:include_blank => true}) %>
       </div>
       <div class="field">
-        <%= person_fields.label :title %>
-        <%= person_fields.text_field :title %>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
       </div>
       <div class="field">
-        <%= person_fields.label :job_title %>
-        <%= person_fields.text_field :job_title %>
+        <%= f.label :job_title %>
+        <%= f.text_field :job_title %>
       </div>
       <div class="field">
-        <%= person_fields.label :job_position %>
-        <%= person_fields.text_field :job_position %>
+        <%= f.label :job_position %>
+        <%= f.text_field :job_position %>
       </div>
 
       <div class="field">
-        <%= person_fields.label :job_company %>
-        <%= person_fields.text_field :job_company %>
+        <%= f.label :job_company %>
+        <%= f.text_field :job_company %>
       </div>
       <div class="field">
-        <%= person_fields.label :job_industry %>
-        <%= person_fields.text_field :job_industry %>
+        <%= f.label :job_industry %>
+        <%= f.text_field :job_industry %>
       </div>
       <div class="field">
-        <%= person_fields.label :education %>
-        <%= person_fields.text_field :education %>
+        <%= f.label :education %>
+        <%= f.text_field :education %>
       </div>
     </div>
 
-    <%= render "address_fields", :person_form => person_fields %>
+    <%= render "address_fields", :person_form => f %>
 
 <% end %>

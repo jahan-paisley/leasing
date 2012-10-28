@@ -15,5 +15,8 @@ module CustomerHelper
     Person::MARITAL_STATUSES.map {|o| I18n.t (o)}.zip(Person::MARITAL_STATUSES)
   end
 
+  def customer_legal_types_options
+    Customer::LEGAL_TYPES.map {|o| I18n.t (o)}.zip(Customer::LEGAL_TYPES)
+  end
 
 end

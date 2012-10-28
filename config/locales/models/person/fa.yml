@@ -3,7 +3,7 @@ fa:
   activerecord:
     models:
       person: 'مشتری'
-      customer: ''
+      customer: 'مشتری'
     attributes:
       person:
         firstname: 'نام'
@@ -27,3 +27,5 @@ fa:
         job_industry: 'صنعت'
       customer:
         legal_type: 'نوع مشتری'
+
+

@@ -79,7 +79,6 @@ ActiveRecord::Schema.define(:version => 20121027115106) do
     t.string   "education"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
-    t.string   "type"
   end
 
   create_table "provinces", :force => true do |t|
