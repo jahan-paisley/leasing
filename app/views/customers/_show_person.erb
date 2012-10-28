@@ -1,0 +1,55 @@
+<div class='field'>
+	<p>
+		<b><%= Person.human_attribute_name("firstname") %>:</b> <%= @customer.person.firstname %>
+	</p>
+</div>
+<div class='field'>
+	<p>
+		<b><%= Person.human_attribute_name("lastname") %>:</b> <%= @customer.person.lastname %>
+	</p>
+</div>
+<div class='field'>
+	<p>
+		<b><%= Person.human_attribute_name("identity_no") %>:</b> <%= @customer.person.identity_no %>
+	</p>
+</div>
+<div class='field'>
+	<p>
+		<b><%= Person.human_attribute_name("national_no") %>:</b> <%= @customer.person.national_no %>
+	</p>
+</div>
+<div class='field'>
+	<p>
+		<b><%= Person.human_attribute_name("birthdate") %>:</b> <label class="ltr"><%= @customer.person.birthdate.to_s.gsub('-', '/') %></label>
+	</p>
+</div>
+<div class='field'>
+	<p>
+		<b><%= Person.human_attribute_name("identity_serial") %>:</b> <%= @customer.person.identity_serial %>
+	</p>
+</div>
+<div class='field'>
+	<p>
+		<b><%= Person.human_attribute_name("fathername") %>:</b> <%= @customer.person.fathername %>
+	</p>
+</div>
+<div class='field'>
+	<p>
+		<b><%= Person.human_attribute_name("identity_issue_date") %>:</b> <label class="ltr"><%= @customer.person.identity_issue_date.to_s.gsub('-', '/') %></label>
+	</p>
+</div>
+<div class='field'>
+	<p>
+		<b><%= Person.human_attribute_name("identity_issue_city") %>:</b> <%= @customer.person.identity_issue_city %>
+	</p>
+</div>
+<div class='field'>
+	<p>
+		<b><%= Person.human_attribute_name("gender") %>:</b> <%= t @customer.person.gender %>
+	</p>
+</div>
+<div class='field'>
+	<p>
+		<b><%= Person.human_attribute_name("marital_status") %>:</b> <%= t @customer.person.marital_status %>
+	</p>
+</div>

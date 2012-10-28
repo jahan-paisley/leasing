@@ -1,74 +1,19 @@
-<h3><%= Customer.model_name.human %></h3>
-
-<br/>
-<% if notice %>
-    <div id="notice"><%= notice %></div>
-<% end %>
+<h3>
+	<%= Customer.model_name.human %>
+</h3>
+<p>
+	<br>
+	<% if notice %>
+</p>
+<div id="notice">
+	<%= notice %>
+</div><% end %><%= render 'show_person', :f => @customer%>
 <div class='field'>
-  <p>
-    <b><%= Customer.human_attribute_name("firstname") %>:</b>
-    <%= @customer.firstname %>
-  </p>
+	<p>
+		<b><%= Customer.human_attribute_name("legal_type") %>:</b> <%= t @customer.legal_type %>
+	</p>
 </div>
-
-<div class='field'>
-  <p><b><%= Customer.human_attribute_name("lastname") %>:</b>
-    <%= @customer.lastname %>
-  </p></div>
-
-<div class='field'>
-  <p><b><%= Customer.human_attribute_name("identity_no") %>:</b>
-    <%= @customer.identity_no %>
-  </p></div>
-
-<div class='field'>
-  <p><b><%= Customer.human_attribute_name("national_no") %>:</b>
-    <%= @customer.national_no %>
-  </p></div>
-
-<div class='field'>
-  <p><b><%= Customer.human_attribute_name("birthdate") %>:</b>
-    <lable class="ltr"> <%= @customer.birthdate.to_s.gsub('-', '/') %></label>
-  </p>
-</div>
-
-<div class='field'>
-  <p><b><%= Customer.human_attribute_name("identity_serial") %>:</b>
-    <%= @customer.identity_serial %>
-  </p></div>
-
-<div class='field'>
-  <p><b><%= Customer.human_attribute_name("fathername") %>:</b>
-    <%= @customer.fathername %>
-  </p></div>
-
-<div class='field'>
-  <p><b><%= Customer.human_attribute_name("identity_issue_date") %>:</b>
-    <lable class="ltr"> <%= @customer.identity_issue_date.to_s.gsub('-', '/') %>  </label>
-  </p>
-</div>
-
-<div class='field'>
-  <p><b><%= Customer.human_attribute_name("identity_issue_city") %>:</b>
-    <%= @customer.identity_issue_city %>
-  </p></div>
-
-<div class='field'>
-  <p><b><%= Customer.human_attribute_name("legal_type") %>:</b>
-    <%= @customer.legal_type %>
-  </p></div>
-
-<div class='field'>
-  <p><b><%= Customer.human_attribute_name("gender") %>:</b>
-    <%= t @customer.gender %>
-  </p></div>
-
-<div class='field'>
-  <p><b><%= Customer.human_attribute_name("marital_status") %>:</b>
-    <%= t @customer.marital_status %>
-  </p>
-</div>
-
-<br/>
-<%= link_to (t 'Edit'), edit_customer_path(@customer) %> |
-<%= link_to (t 'Back'), customers_path %>
+<p>
+	<br>
+	<%= link_to (t 'Edit'), edit_customer_path(@customer) %> | <%= link_to (t 'Back'), customers_path %>
+</p>

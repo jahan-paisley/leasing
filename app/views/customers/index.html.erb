@@ -2,40 +2,38 @@
 
 <table id="list-table">
   <tr>
-    <th><%= t 'activerecord.attributes.person.firstname'%> | </th>
-    <th><%= t 'activerecord.attributes.person.lastname'%> | </th>
-    <th><%= t 'activerecord.attributes.person.identity_no'%> | </th>
-    <th><%= t 'activerecord.attributes.person.national_no'%> | </th>
-    <th><%= t 'activerecord.attributes.person.birthdate'%> | </th>
-    <th><%= t 'activerecord.attributes.person.identity_serial'%> | </th>
-    <th><%= t 'activerecord.attributes.person.fathername'%> | </th>
-    <th><%= t 'activerecord.attributes.person.identity_issue_date'%> | </th>
-    <th><%= t 'activerecord.attributes.person.identity_issue_city'%> | </th>
-    <!--<th><%#= t 'activerecord.attributes.customer.legal_type'%> | </th>-->
-    <th><%= t 'activerecord.attributes.person.gender'%> | </th>
-    <th><%= t 'activerecord.attributes.person.marital_status'%></th>
+    <th><%= Person.human_attribute_name("person.firstname") %>   </th>
+    <th><%= Person.human_attribute_name("lastname") %>  </th>
+    <th><%= Person.human_attribute_name("identity_no") %>  </th>
+    <th><%= Person.human_attribute_name("national_no") %>  </th>
+    <th><%= Person.human_attribute_name("birthdate") %>  </th>
+    <th><%= Person.human_attribute_name("identity_serial") %>  </th>
+    <th><%= Person.human_attribute_name("fathername") %>  </th>
+    <th><%= Person.human_attribute_name("identity_issue_date") %>  </th>
+    <th><%= Person.human_attribute_name("identity_issue_city") %>  </th>
+    <th><%= Person.human_attribute_name("gender") %>  </th>
+    <th><%= Person.human_attribute_name("marital_status") %></th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
-<% @customers.each do |person| %>
+<% @customers.each do |cust| %>
   <tr>
-    <td><%= person.firstname %></td>
-    <td><%= person.lastname %></td>
-    <td><%= person.identity_no %></td>
-    <td><%= person.national_no %></td>
-    <td><%= person.birthdate %></td>
-    <td><%= person.identity_serial %></td>
-    <td><%= person.fathername %></td>
-    <td><%= person.identity_issue_date %></td>
-    <td><%= person.identity_issue_city %></td>
-    <!--<td><%#= person.legal_type %></td>-->
-    <td><%= t person.gender %></td>
-    <td><%= t person.marital_status %></td>
-    <td><%= link_to (t 'Show'), person %> |</td>
-    <td><%= link_to (t 'Edit'), edit_customer_path(person) %>|</td>
-    <td><%= link_to (t 'Destroy'), person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= cust.person.firstname %></td>
+    <td><%= cust.person.lastname %></td>
+    <td><%= cust.person.identity_no %></td>
+    <td><%= cust.person.national_no %></td>
+    <td><%= cust.person.birthdate %></td>
+    <td><%= cust.person.identity_serial %></td>
+    <td><%= cust.person.fathername %></td>
+    <td><%= cust.person.identity_issue_date %></td>
+    <td><%= cust.person.identity_issue_city %></td>
+    <td><%= t cust.person.gender %></td>
+    <td><%= t cust.person.marital_status %></td>
+    <td><%= link_to (t 'Show'), cust %>   </td>
+    <td><%= link_to (t 'Edit'), edit_customer_path(cust) %>    </td>
+    <td><%= link_to (t 'Destroy'), cust, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

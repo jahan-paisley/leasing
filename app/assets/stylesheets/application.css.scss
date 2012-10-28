@@ -18,7 +18,9 @@
 
 @font-face {
   font-family: 'B Yekan';
-  src: url('http://www.font-api.ir/fontsdir/47.eot?#') format('eot'), url('http://www.font-api.ir/fontsdir/47.woff') format('woff'), url('http://www.font-api.ir/fontsdir/47.ttf') format('truetype');
+  src: url('fonts/47.eot?#') format('eot'), 
+       url('fonts/47.woff') format('woff'), 
+	   url('fonts/47.ttf') format('truetype');
 }
 
 div.field {
@@ -44,6 +46,4 @@ div.action {
   color: red;
 }
 
-#list-table {
-  width: 90%;
-}
+#list-table { width: 90%; } #list-table td, th{ text-align:center; }
