@@ -2,10 +2,12 @@
 class CustomersController < ApplicationController
   include CustomerHelper
 
+  before_filter :authenticate_user!
+
   # GET /customers
   # GET /customers.json
   def index
-    @customers = Customer.all
+    @customers = Customer.order("created_at").page(params[:page]).per(1)
     @customers.each { |o| to_jalali o }
 
     respond_to do |format|

@@ -56,3 +56,19 @@ fa:
         subject: 'راهنمای بازنشانی رمز عبور'
       unlock_instructions:
         subject: 'راهنمای باز کردن'
+  activerecord:
+    models:
+      user: 'کاربر'
+    attributes:
+      user:
+        name: 'نام'
+        email: 'ایمیل'
+        password: 'رمز ورود'
+        remember_me: 'مرا به خاطر بسپار'
+        password_confirmation: 'تکرار رمز '
+
+
+  sign_in: 'ورود'
+  sign_up: 'ثبت نام'
+  forgot_your_password: 'رمز خود را فراموش کرده ام'
+  send_me_reset_password_instructions: 'دستورالعمل بازنشانی رمز را بفرست'

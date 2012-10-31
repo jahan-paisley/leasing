@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.8'
 gem 'geocoder'
@@ -8,6 +8,7 @@ gem "devise", ">= 2.1.2"
 gem "cancan", ">= 1.6.8"
 gem "rolify"
 gem "client_side_validations", :git => 'git://github.com/bcardarella/client_side_validations.git'
+gem "kaminari"
 
 #gem 'passenger'
 #gem 'omniauth'

@@ -198,4 +198,10 @@ fa:
     errors:
       <<: *errors
   application: 'راهبر ایرانیان'
- 
+  views:
+    pagination:
+      previous: "&lt; صفحه قبل"
+      next: "صفحه بعد &gt;"
+      truncate: "..."
+      first: 'آغاز'
+      last: 'پایان'

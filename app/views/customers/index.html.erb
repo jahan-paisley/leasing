@@ -1,5 +1,7 @@
 <h1><%= t :list_customers%></h1>
 
+<%= paginate @customers %>
+
 <table id="list-table">
   <tr>
     <th><%= Person.human_attribute_name("person.firstname") %>   </th>

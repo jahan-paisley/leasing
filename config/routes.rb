@@ -5,7 +5,7 @@ Leasing::Application.routes.draw do
   authenticated :user do
     root :to => 'home#index'
   end
-  root :to => "customers#new"
+  root :to => "customers#index"
   devise_for :users
   resources :users, :only => [:show, :index]
 end
