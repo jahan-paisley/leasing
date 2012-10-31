@@ -9,7 +9,6 @@ module ApplicationHelper
           jdate = JalaliDate.new(year.to_i, month.to_i, day.to_i)
           params[a][key]= jdate.to_gregorian.to_s
         elsif value.is_a? Hash
-          debugger
           to_gregorian value
         end
       end  
@@ -22,7 +21,6 @@ module ApplicationHelper
         jdate = JalaliDate.new(value)
         arg[name] = jdate.to_s
       elsif value.is_a? ActiveRecord::Base
-        debugger
         to_jalali value
       end
     end

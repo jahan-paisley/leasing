@@ -1,5 +1,7 @@
 fa:
-  errors:
-    messages:
-      email: "ایمیل صحیح نیست"
+  activerecord:
+    errors:
+      messages:
+        email: " صحیح نیست"
+        nationalno: " صحیح نیست"
   success_message: 'عملیات با موفقیت انجام شد.'

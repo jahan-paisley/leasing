@@ -23,9 +23,12 @@ group :development, :test do
   gem "rspec-rails", ">= 2.11.0"
   gem "factory_girl_rails", ">= 4.0.0"
   gem 'sqlite3'
+  gem 'pry'
+  gem 'pry-rails'
   gem 'pry-remote'
+  gem 'pry-nav'
   gem 'debugger'
-  gem 'pow-debug'
+  gem 'plymouth'
 end
 
 gem 'nifty-generators', :group => [:development]

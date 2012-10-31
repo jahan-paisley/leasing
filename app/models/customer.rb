@@ -5,6 +5,6 @@ class Customer < ActiveRecord::Base
   accepts_nested_attributes_for :person
   validates_inclusion_of :legal_type, :in => lambda { |o| LEGAL_TYPES }
 
-  LEGAL_TYPES = ['Individual', 'Business']
+  LEGAL_TYPES = %w[Individual Business]
 
 end

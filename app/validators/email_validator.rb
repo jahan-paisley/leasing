@@ -1,3 +1,4 @@
+
 class EmailValidator < ActiveModel::EachValidator
   def validate_each(record, attr_name, value)
     unless value =~ /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i

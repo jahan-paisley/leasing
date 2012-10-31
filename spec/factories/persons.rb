@@ -5,7 +5,7 @@ FactoryGirl.define do
     firstname "MyString"
     lastname "MyString"
     identity_no "MyString"
-    national_no "MyString"
+    nationalno "MyString"
     birthdate "2012-09-30"
     identity_serial "MyString"
     fathername "MyString"

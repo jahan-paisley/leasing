@@ -1,7 +1,7 @@
 #encoding: utf-8
 fa:
   Ave: 'خیابان اصلی'
-  Street: 'خیایان فرعی'
+  Street: 'خیابان فرعی'
   Alley: 'کوچه'
   Square: 'میدان'
   Highway: 'بزرگراه'
@@ -17,3 +17,10 @@ fa:
   Single: 'مجرد'
   Individual: 'حقیقی'
   Business: 'حقوقی'
+  Illiterate: 'بیسواد'
+  UnderDiploma: 'زیر دیپلم'
+  Diploma: 'دیپلم'
+  Bachelor: 'لیسانس'
+  Master: 'فوق لیسانس'
+  PhD: 'دکترا'
+  Hawzah: 'حوزوی'

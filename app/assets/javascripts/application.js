@@ -19,6 +19,7 @@
 //= require calendar-setup
 //= require customers
 //= require rails.validations
+//= require rails.validations.customValidators
 //= require_self
 
 

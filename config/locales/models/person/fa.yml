@@ -18,7 +18,7 @@ fa:
         identity_serial: 'سریال شناسنامه'
         lastname: 'نام خانوادگی'
         marital_status: 'وضعیت تاهل'
-        national_no: 'شماره ملی'
+        nationalno: 'شماره ملی'
         title: 'عنوان'
         job_title: 'شغل'
         job_position: 'سمت'

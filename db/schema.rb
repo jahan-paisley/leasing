@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(:version => 20121027115106) do
     t.string   "firstname"
     t.string   "lastname"
     t.string   "identity_no"
-    t.string   "national_no"
+    t.string   "nationalno"
     t.date     "birthdate"
     t.string   "identity_serial"
     t.string   "fathername"

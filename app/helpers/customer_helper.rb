@@ -19,4 +19,8 @@ module CustomerHelper
     Customer::LEGAL_TYPES.map {|o| I18n.t (o)}.zip(Customer::LEGAL_TYPES)
   end
 
+  def person_educations_options
+    Person::EDUCATIONS.map {|o| I18n.t (o)}.zip(Person::EDUCATIONS)
+  end
+  
 end

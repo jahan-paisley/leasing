@@ -15,8 +15,8 @@
         <%= f.text_field :identity_no %>
       </div>
       <div class="field">
-        <%= f.label :national_no %>
-        <%= f.text_field :national_no %>
+        <%= f.label :nationalno %>
+        <%= f.text_field :nationalno %>
       </div>
       <div class="field">
         <%= f.label :birthdate %>
@@ -69,7 +69,7 @@
       </div>
       <div class="field">
         <%= f.label :education %>
-        <%= f.text_field :education %>
+        <%= f.select :education, person_educations_options,{:include_blank => true} %>
       </div>
     </div>
 

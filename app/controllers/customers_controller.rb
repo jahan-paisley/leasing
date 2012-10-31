@@ -51,11 +51,8 @@ class CustomersController < ApplicationController
   # POST /customers
   # POST /customers.json
   def create
-    #debugger
     to_gregorian (params)
-    #debugger
     @customer = Customer.new(params[:customer])
-
     respond_to do |format|
       if @customer.save
         format.html { redirect_to @customer, notice: (t 'success_message') }
@@ -70,8 +67,8 @@ class CustomersController < ApplicationController
   # PUT /customers/1
   # PUT /customers/1.json
   def update
-    @customer = Customer.find(params[:id])
     to_gregorian params
+    @customer = Customer.find(params[:id])
     respond_to do |format|
       if @customer.update_attributes(params[:customer])
         format.html { redirect_to @customer, notice: (t 'success_message') }
@@ -79,7 +76,7 @@ class CustomersController < ApplicationController
       else
         format.html { render action: "edit" }
         format.json { render json: @customer.errors, status: :unprocessable_entity }
-      end
+      end  
     end
   end
 
