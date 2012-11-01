@@ -5,3 +5,7 @@ fa:
         email: " صحیح نیست"
         nationalno: " صحیح نیست"
   success_message: 'عملیات با موفقیت انجام شد.'
+  are_you_sure: 'آیا مطمئن هستید؟'
+  leave_blank_if_not_change: 'در صورتی که نمی خواهید رمز را تغییر دهید خالی بگذارید'
+  password_confirm_to_change: 'برای اعمال تغییرات رمز را وارد کنید'
+  cancel_my_account: 'لغو ثبت نام'

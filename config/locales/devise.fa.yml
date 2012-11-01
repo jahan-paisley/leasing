@@ -66,6 +66,7 @@ fa:
         password: 'رمز ورود'
         remember_me: 'مرا به خاطر بسپار'
         password_confirmation: 'تکرار رمز '
+        current_password: 'رمز جاری'
 
 
   sign_in: 'ورود'

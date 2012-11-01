@@ -7,7 +7,7 @@ class CustomersController < ApplicationController
   # GET /customers
   # GET /customers.json
   def index
-    @customers = Customer.order("created_at").page(params[:page]).per(1)
+    @customers = Customer.order("created_at").page(params[:page]).per(10)
     @customers.each { |o| to_jalali o }
 
     respond_to do |format|

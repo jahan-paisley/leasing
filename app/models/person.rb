@@ -1,5 +1,4 @@
 # encoding: utf-8
-
 class Person < ActiveRecord::Base
   attr_accessible :birthdate, :fathername, :firstname,
                   :gender, :identity_issue_city, :identity_issue_date,
@@ -9,15 +8,14 @@ class Person < ActiveRecord::Base
                   :job_industry, :education, :addresses_attributes #,:primary_address_id
   has_one :customer
   has_many :addresses, :dependent => :destroy
-                                                                   #has_one :primary_address, :class_name => 'Address'
+  #has_one :primary_address, :class_name => 'Address'
   accepts_nested_attributes_for :addresses, :allow_destroy => true
 
-  validates :nationalno, :uniqueness => true
+  validates :nationalno, :nationalno => true, :uniqueness => true
   validates :firstname, :lastname, :gender, :nationalno, :presence => true
   validates :gender, :inclusion => {:in => lambda {|o| GENDERS }}
   validates :marital_status, :inclusion => {:in => lambda {|o| MARITAL_STATUSES }}
   validates :education, :inclusion => {:in => lambda {|o| EDUCATIONS }}, :allow_blank => true
-  validates :nationalno, :nationalno => true
 
   GENDERS = %w[Male Female]
   MARITAL_STATUSES = %w[Married Single]
