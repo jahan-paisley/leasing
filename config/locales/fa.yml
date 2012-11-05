@@ -205,3 +205,4 @@ fa:
       truncate: "..."
       first: 'آغاز'
       last: 'پایان'
+  created_at: 'ایجاد شده در تاریخ'

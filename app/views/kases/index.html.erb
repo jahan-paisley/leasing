@@ -1,0 +1,35 @@
+<h1>Listing kases</h1>
+
+<table>
+  <tr>
+    <th>Start date</th>
+    <th>Finish date</th>
+    <th>Customer</th>
+    <th>User</th>
+    <th>Status</th>
+    <th>No</th>
+    <th>Receipt date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @kases.each do |kase| %>
+  <tr>
+    <td><%= kase.start_date %></td>
+    <td><%= kase.finish_date %></td>
+    <td><%= kase.customer %></td>
+    <td><%= kase.user %></td>
+    <td><%= kase.status %></td>
+    <td><%= kase.no %></td>
+    <td><%= kase.receipt_date %></td>
+    <td><%= link_to 'Show', kase %></td>
+    <td><%= link_to 'Edit', edit_kase_path(kase) %></td>
+    <td><%= link_to 'Destroy', kase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Kase', new_kase_path %>

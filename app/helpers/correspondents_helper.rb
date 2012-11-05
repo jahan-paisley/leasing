@@ -1,0 +1,2 @@
+module CorrespondentsHelper
+end

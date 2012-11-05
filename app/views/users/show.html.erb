@@ -1,3 +1,3 @@
-<h3>User</h3>
-<p>User: <%= @user.name %></p>
-<p>Email: <%= @user.email if @user.email %></p>
+<h3><%= User.model_name.human %></h3>
+<p><%= User.human_attribute_name("name") %>: <%= @user.name %></p>
+<p><%= User.human_attribute_name("email") %>: <%= @user.email if @user.email %></p>

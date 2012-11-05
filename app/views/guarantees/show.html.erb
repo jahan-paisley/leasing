@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>References:</b>
+  <%= @guarantee.references %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @guarantee.amount %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @guarantee.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_guarantee_path(@guarantee) %> |
+<%= link_to 'Back', guarantees_path %>

@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Start date:</b>
+  <%= @kase.start_date %>
+</p>
+
+<p>
+  <b>Finish date:</b>
+  <%= @kase.finish_date %>
+</p>
+
+<p>
+  <b>Customer:</b>
+  <%= @kase.customer %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @kase.user %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @kase.status %>
+</p>
+
+<p>
+  <b>No:</b>
+  <%= @kase.no %>
+</p>
+
+<p>
+  <b>Receipt date:</b>
+  <%= @kase.receipt_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_kase_path(@kase) %> |
+<%= link_to 'Back', kases_path %>

@@ -31,7 +31,6 @@ class CustomersController < ApplicationController
   # GET /customers/new
   # GET /customers/new.json
   def new
-
     @customer = Customer.new
     @customer.build_person
     2.times do

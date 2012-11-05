@@ -1,0 +1,35 @@
+<h1>Listing financial_contracts</h1>
+
+<table>
+  <tr>
+    <th>Referrer</th>
+    <th>No</th>
+    <th>Category</th>
+    <th>Due date</th>
+    <th>Total amount</th>
+    <th>Property</th>
+    <th>Sign date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @financial_contracts.each do |financial_contract| %>
+  <tr>
+    <td><%= financial_contract.correspondent_id %></td>
+    <td><%= financial_contract.no %></td>
+    <td><%= financial_contract.category %></td>
+    <td><%= financial_contract.due_date %></td>
+    <td><%= financial_contract.total_amount %></td>
+    <td><%= financial_contract.property_id %></td>
+    <td><%= financial_contract.sign_date %></td>
+    <td><%= link_to 'Show', financial_contract %></td>
+    <td><%= link_to 'Edit', edit_financial_contract_path(financial_contract) %></td>
+    <td><%= link_to 'Destroy', financial_contract, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Financial contract', new_financial_contract_path %>

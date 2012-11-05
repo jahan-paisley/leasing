@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @correspondent.name %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @correspondent.category %>
+</p>
+
+
+<%= link_to 'Edit', edit_correspondent_path(@correspondent) %> |
+<%= link_to 'Back', correspondents_path %>

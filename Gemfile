@@ -9,6 +9,7 @@ gem "cancan", ">= 1.6.8"
 gem "rolify"
 gem "client_side_validations", :git => 'git://github.com/bcardarella/client_side_validations.git'
 gem "kaminari"
+gem 'money-rails'
 
 #gem 'passenger'
 #gem 'omniauth'

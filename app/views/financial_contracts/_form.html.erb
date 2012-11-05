@@ -1,0 +1,45 @@
+<%= form_for(@financial_contract) do |f| %>
+  <% if @financial_contract.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@financial_contract.errors.count, "error") %> prohibited this financial_contract from being saved:</h2>
+
+      <ul>
+      <% @financial_contract.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :correspondent_id %><br />
+    <%= f.number_field :correspondent_id %>
+  </div>
+  <div class="field">
+    <%= f.label :no %><br />
+    <%= f.text_field :no %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :due_date %><br />
+    <%= f.date_select :due_date %>
+  </div>
+  <div class="field">
+    <%= f.label :total_amount %><br />
+    <%= f.number_field :total_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :property_id %><br />
+    <%= f.number_field :property_id %>
+  </div>
+  <div class="field">
+    <%= f.label :sign_date %><br />
+    <%= f.date_select :sign_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

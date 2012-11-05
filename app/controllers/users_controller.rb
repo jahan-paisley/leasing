@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def index
     authorize! :index, @user, :message => 'Not authorized as an administrator.'
-    @users = User.all
+    @users = User.all.each { |o| to_jalali o }
   end
 
   def show

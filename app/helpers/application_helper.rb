@@ -17,11 +17,14 @@ module ApplicationHelper
   
   def to_jalali arg
     arg.attributes.each_pair do |name, value|
-      if value.is_a? Date
+      if (value.is_a? Date) or (value.is_a? DateTime)
         jdate = JalaliDate.new(value)
         arg[name] = jdate.to_s
       elsif value.is_a? ActiveRecord::Base
         to_jalali value
+      elsif value.is_a? ActiveSupport::TimeWithZone
+        jdate = JalaliDate.new(value.to_datetime)
+        arg[name] = jdate.to_s
       end
     end
     arg

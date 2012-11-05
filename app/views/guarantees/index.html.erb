@@ -1,0 +1,27 @@
+<h1>Listing guarantees</h1>
+
+<table>
+  <tr>
+    <th>References</th>
+    <th>Amount</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @guarantees.each do |guarantee| %>
+  <tr>
+    <td><%= guarantee.references %></td>
+    <td><%= guarantee.amount %></td>
+    <td><%= guarantee.description %></td>
+    <td><%= link_to 'Show', guarantee %></td>
+    <td><%= link_to 'Edit', edit_guarantee_path(guarantee) %></td>
+    <td><%= link_to 'Destroy', guarantee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Guarantee', new_guarantee_path %>

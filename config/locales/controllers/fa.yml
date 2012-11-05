@@ -1,7 +1,7 @@
 # encoding: utf-8
 fa:
   new_customer: 'مشتری جدید'
-  list_customers: 'لیست مشتریان'
+  customers: 'لیست مشتریان'
   Back: 'بازگشت'
   Show: 'نمایش'
   Edit: 'ویرایش'

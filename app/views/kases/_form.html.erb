@@ -1,0 +1,49 @@
+<%= form_for(@kase) do |f| %>
+    <% if @kase.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@kase.errors.count, "error") %> prohibited this kase from being saved:</h2>
+
+          <ul>
+            <% @kase.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :no %>
+      <%= f.number_field :no %>
+    </div>
+    <div class="field">
+      <%= f.label :customer %>
+      <%= f.select(:customer_id, Customer.all.collect { |p| [p.person.lastname+ ', ' + p.person.firstname, p.id] }, {:include_blank => true}) %>
+    </div>
+    <div class="field">
+      <%= f.label :receipt_date %>
+      <%= f.text_field :receipt_date, :class => true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :start_date %>
+      <%= f.text_field :start_date, :class => 'date' %>
+    </div>
+    <div class="field">
+      <%= f.label :finish_date %>
+      <%= f.text_field :finish_date, :class => 'date' %>
+    </div>
+    <div class="field">
+      <%= f.label :user %>
+      <%= f.select(:user_id, User.all.collect { |p| [p.name, p.id] }, {:include_blank => true}) %>
+    </div>
+    <div class="field">
+      <%= f.label :status %>
+      <%= f.text_field :status %>
+    </div>
+    <div class="field">
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

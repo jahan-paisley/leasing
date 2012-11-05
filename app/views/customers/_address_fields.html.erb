@@ -1,5 +1,6 @@
 <% @customer.person.addresses.each_with_index do |address, index| %>
     <%= person_form.fields_for :addresses, address do |f| %>
+        <%= binding.pry%>
         <div id="pane<%= index+2 %>" class="tab-pane">
           <h4>آدرس</h4>
 
@@ -52,7 +53,7 @@
 
           <div class="field">
             <%= f.label :postal_code %>
-            <%= f.text_field :postal_code, :class =>'number' %>
+            <%= f.text_field :postal_code, :class => 'number' %>
           </div>
 
           <div class="field">

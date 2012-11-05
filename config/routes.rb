@@ -1,5 +1,17 @@
 Leasing::Application.routes.draw do
 
+  resources :correspondents
+
+  resources :guarantors
+
+  resources :guarantees
+
+  resources :properties
+
+  resources :financial_contracts
+
+  resources :kases
+
   resources :customers
 
   authenticated :user do
