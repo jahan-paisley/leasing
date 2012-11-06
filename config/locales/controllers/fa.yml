@@ -14,3 +14,8 @@ fa:
   edit_user_registration: 'ویرایش اطلاعات کاربری'
   user: 'نمایش اطلاعات کاربری'
   users: 'نمایش اطلاعات کاربران'
+  new_kase: 'پرونده جدید'
+  kases: 'لیست پرونده ها'
+  edit_kase: ''
+  destroy_kase: 'حذف پرونده'
+

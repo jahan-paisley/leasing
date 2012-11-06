@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Referrer:</b>
+  <%= @contract.correspondent_id %>
+</p>
+
+<p>
+  <b>idno:</b>
+  <%= @contract.idno %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @contract.category %>
+</p>
+
+<p>
+  <b>Due date:</b>
+  <%= @contract.due_date %>
+</p>
+
+<p>
+  <b>Total amount:</b>
+  <%= @contract.total_amount %>
+</p>
+
+<p>
+  <b>Property:</b>
+  <%= @contract.property_id %>
+</p>
+
+<p>
+  <b>Sign date:</b>
+  <%= @contract.sign_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_contract_path(@contract) %> |
+<%= link_to 'Back', contracts_path %>

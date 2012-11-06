@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe FinancialContract do
+describe Contract do
   pending "add some examples to (or delete) #{__FILE__}"
 end

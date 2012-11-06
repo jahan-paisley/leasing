@@ -41,14 +41,6 @@ ActiveRecord::Schema.define(:version => 20121105211559) do
   add_index "addresses", ["city_id"], :name => "index_addresses_on_city_id"
   add_index "addresses", ["person_id"], :name => "index_addresses_on_person_id"
 
-  create_table "cases", :force => true do |t|
-    t.date     "start_date"
-    t.date     "finish_date"
-    t.integer  "total_amount"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
   create_table "cities", :force => true do |t|
     t.string   "name"
     t.integer  "province_id"
@@ -57,6 +49,18 @@ ActiveRecord::Schema.define(:version => 20121105211559) do
   end
 
   add_index "cities", ["province_id"], :name => "index_cities_on_province_id"
+
+  create_table "contracts", :force => true do |t|
+    t.integer  "correspondent_id"
+    t.string   "idno"
+    t.string   "category"
+    t.date     "due_date"
+    t.integer  "total_amount"
+    t.integer  "property_id"
+    t.date     "sign_date"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "correspondents", :force => true do |t|
     t.string   "name"
@@ -74,24 +78,12 @@ ActiveRecord::Schema.define(:version => 20121105211559) do
 
   add_index "customers", ["person_id"], :name => "index_customers_on_person_id"
 
-  create_table "financial_contracts", :force => true do |t|
-    t.integer  "correspondent_id"
-    t.string   "no"
-    t.string   "category"
-    t.date     "due_date"
-    t.integer  "total_amount"
-    t.integer  "property_id"
-    t.date     "sign_date"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-  end
-
   create_table "guarantees", :force => true do |t|
-    t.integer  "FinancialContract_id"
+    t.integer  "Contract_id"
     t.integer  "amount"
     t.string   "description"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "guarantors", :force => true do |t|
@@ -100,18 +92,22 @@ ActiveRecord::Schema.define(:version => 20121105211559) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "guarantors", ["person_id"], :name => "index_guarantors_on_person_id"
+
   create_table "kases", :force => true do |t|
     t.date     "start_date"
     t.date     "finish_date"
     t.integer  "customer_id"
+    t.integer  "contract_id"
     t.integer  "user_id"
     t.string   "status"
-    t.integer  "no"
+    t.integer  "idno"
     t.date     "receipt_date"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
 
+  add_index "kases", ["contract_id"], :name => "index_kases_on_contract_id"
   add_index "kases", ["customer_id"], :name => "index_kases_on_customer_id"
   add_index "kases", ["user_id"], :name => "index_kases_on_user_id"
 
@@ -138,7 +134,7 @@ ActiveRecord::Schema.define(:version => 20121105211559) do
   end
 
   create_table "properties", :force => true do |t|
-    t.string   "no"
+    t.string   "idno"
     t.string   "category"
     t.string   "description"
     t.datetime "created_at",  :null => false

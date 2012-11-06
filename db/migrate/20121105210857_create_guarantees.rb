@@ -1,7 +1,7 @@
 class CreateGuarantees < ActiveRecord::Migration
   def change
     create_table :guarantees do |t|
-      t.references :FinancialContract
+      t.references :Contract
       t.integer :amount
       t.string :description
 

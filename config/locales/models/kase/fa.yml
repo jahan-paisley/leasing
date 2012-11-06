@@ -3,14 +3,19 @@ fa:
   activerecord:
     models:
       kase: 'پرونده'
+      property: 'ملک'
     attributes:
       kase: &kase_atts
-        no: 'شماره'
+        idno: 'شماره'
         customer: 'مشتری'
         user: 'کاربر'
         status: 'وضعیت'
         start_date: 'تاریخ شروع'
         finish_date: 'تاریخ پایان'
         receipt_date: 'تاریخ دریافت'
-      person/addresses:
-        <<: *kase_atts
+      property: &property_atts
+        idno: 'شماره شناسه ملک'
+        category: 'نوع ملک'
+        description: 'توضیحات'
+      kase/contract/property:
+        <<: *property_atts

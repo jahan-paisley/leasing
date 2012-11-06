@@ -25,7 +25,8 @@ class KasesController < ApplicationController
   # GET /kases/new.json
   def new
     @kase = Kase.new
-
+    @kase.build_contract
+    @kase.contract.build_property
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @kase }

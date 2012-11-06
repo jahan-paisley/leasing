@@ -1,4 +1,4 @@
 class Property < ActiveRecord::Base
-  attr_accessible :category, :description, :no
-  belongs_to  :financial_contract
+  attr_accessible :category, :description, :idno, :contract_id
+  has_one :contract
 end

@@ -1,2 +1,0 @@
-module FinancialContractsHelper
-end

@@ -7,7 +7,7 @@ FactoryGirl.define do
     customer nil
     user nil
     status "MyString"
-    no 1
+    idno 1
     receipt_date "2012-11-05"
   end
 end

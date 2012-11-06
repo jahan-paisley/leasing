@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :property do
-    no "MyString"
+    idno "MyString"
     category "MyString"
     description "MyString"
   end

@@ -8,7 +8,7 @@ Leasing::Application.routes.draw do
 
   resources :properties
 
-  resources :financial_contracts
+  resources :contracts
 
   resources :kases
 
