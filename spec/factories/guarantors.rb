@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :guarantor do
-    references ""
+    person
   end
 end

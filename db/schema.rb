@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121105211559) do
+ActiveRecord::Schema.define(:version => 20121111152428) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "person_id"
@@ -50,6 +50,11 @@ ActiveRecord::Schema.define(:version => 20121105211559) do
 
   add_index "cities", ["province_id"], :name => "index_cities_on_province_id"
 
+  create_table "contract_guarantors", :id => false, :force => true do |t|
+    t.integer "contract_id"
+    t.integer "guarantor_id"
+  end
+
   create_table "contracts", :force => true do |t|
     t.integer  "correspondent_id"
     t.string   "idno"
@@ -79,7 +84,7 @@ ActiveRecord::Schema.define(:version => 20121105211559) do
   add_index "customers", ["person_id"], :name => "index_customers_on_person_id"
 
   create_table "guarantees", :force => true do |t|
-    t.integer  "Contract_id"
+    t.integer  "contract_id"
     t.integer  "amount"
     t.string   "description"
     t.datetime "created_at",  :null => false

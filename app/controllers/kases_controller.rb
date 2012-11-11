@@ -27,6 +27,14 @@ class KasesController < ApplicationController
     @kase = Kase.new
     @kase.build_contract
     @kase.contract.build_property
+    2.times do
+      @kase.contract.guarantees.build
+    end
+    2.times do
+      @kase.contract.guarantors.build
+    end
+
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @kase }

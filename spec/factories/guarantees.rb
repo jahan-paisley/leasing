@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :guarantee do
-    references ""
+    contract
     amount 1
     description "MyString"
   end

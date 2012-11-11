@@ -21,5 +21,10 @@ class Person < ActiveRecord::Base
   MARITAL_STATUSES = %w[Married Single]
   EDUCATIONS = %w[Illiterate UnderDiploma Diploma Bachelor Master PhD Hawzah]
 
+
+  def to_s
+    "#{lastname}, #{firstname}"
+  end
+
 end
 
