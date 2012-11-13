@@ -3,7 +3,12 @@ fa:
   activerecord:
     models:
       kase: 'پرونده'
+      contract: 'قرارداد'
       property: 'ملک'
+      guarantee: 'وثیقه'
+      guarantor: 'ضامن'
+      installment: 'قسط'
+      payment: 'پرداخت'
     attributes:
       kase: &kase_atts
         idno: 'شماره'
@@ -17,5 +22,33 @@ fa:
         idno: 'شماره شناسه ملک'
         category: 'نوع ملک'
         description: 'توضیحات'
+      contract: &contract_atts
+        category: 'نوع'
+        due_date: 'تاریخ سررسید'
+        idno: 'شماره'
+        property_id: 'مال به اجاره رفته'
+        correspondent_id: 'موسسه مالی/شعبه بانک'
+        sign_date: ' تاریخ عقد قرارداد'
+        total_amount: 'مبلغ اولیه کل'
+      guarantee:
+        amount: 'ارزش ریالی'
+        description: 'مشخصات'
+      guarantor:
+        person_id: 'ضامن'
+      installment:
+        amount: 'مبلغ'
+        due_date: 'تاریخ سررسید'
+        paid: 'پرداخت شده؟'
+      payment:
+        amount: 'مبلغ'
+        benef_account: 'حساب مقصد'
+        idno: 'شماره شناسه'
+        origin_account: 'حساب مبدا'
+        origin_bank: 'بانک مبدا'
+        payment_date: 'تاریخ پرداخت'
+        payment_method: 'روش پرداخت'
+      kase/contract:
+        <<: *contract_atts
       kase/contract/property:
         <<: *property_atts
+

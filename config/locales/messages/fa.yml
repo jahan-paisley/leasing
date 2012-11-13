@@ -9,3 +9,5 @@ fa:
   leave_blank_if_not_change: 'در صورتی که نمی خواهید رمز را تغییر دهید خالی بگذارید'
   password_confirm_to_change: 'برای اعمال تغییرات رمز را وارد کنید'
   cancel_my_account: 'لغو ثبت نام'
+  validation_error_count_message: ' خطا مانع عملیات شده است:'
+

@@ -1,13 +1,4 @@
 <%= kase_form.fields_for :contract do |f| %>
-    <%#= binding.pry %>
-    <div class="field">
-    </div>
-    <div class="field">
-    </div>   <br>
-    <div class="field"><b>اطلاعات قرارداد</b>
-    </div>
-    <div class="field">
-    </div>
 
     <div class="field">
       <%= f.label :idno %>
@@ -33,9 +24,25 @@
       <%= f.label :sign_date %>
       <%= f.text_field :sign_date, :class => 'date' %>
     </div>
-
-    <%= render 'property_fields', :contract_form => f %>
-    <%= render 'guarantees_fields', :contract_form => f %>
-    <%= render 'guarantors_fields', :contract_form => f %>
-
+    <div class="tabbable">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#pane11" data-toggle="tab"><%= t 'activerecord.models.property' %> </a></li>
+        <li><a href="#pane12" data-toggle="tab"><%= t 'activerecord.models.guarantee' %></a></li>
+        <li><a href="#pane13" data-toggle="tab"><%= t 'activerecord.models.guarantor' %></a></li>
+      </ul>
+      <div class="tab-content">
+        <div id="pane11" class="tab-pane active">
+          <h4><%= t 'activerecord.models.property' %></h4>
+          <%= render 'property_fields', :contract_form => f %>
+        </div>
+        <div id="pane12" class="tab-pane">
+          <h4><%= t 'activerecord.models.guarantee' %></h4>
+          <%= render 'guarantees_fields', :contract_form => f %>
+        </div>
+        <div id="pane13" class="tab-pane">
+          <h4><%= t 'activerecord.models.guarantor' %></h4>
+          <%= render 'guarantors_fields', :contract_form => f %>
+        </div>
+      </div>
+    </div>
 <% end %>

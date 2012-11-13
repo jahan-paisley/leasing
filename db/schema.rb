@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121111152428) do
+ActiveRecord::Schema.define(:version => 20121112105719) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "person_id"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(:version => 20121111152428) do
     t.integer "contract_id"
     t.integer "guarantor_id"
   end
+
+  add_index "contract_guarantors", ["contract_id", "guarantor_id"], :name => "index_contract_guarantors_on_contract_id_and_guarantor_id"
 
   create_table "contracts", :force => true do |t|
     t.integer  "correspondent_id"
@@ -99,6 +101,15 @@ ActiveRecord::Schema.define(:version => 20121111152428) do
 
   add_index "guarantors", ["person_id"], :name => "index_guarantors_on_person_id"
 
+  create_table "installments", :force => true do |t|
+    t.integer  "amount"
+    t.date     "due_date"
+    t.integer  "kase_id"
+    t.boolean  "paid"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "kases", :force => true do |t|
     t.date     "start_date"
     t.date     "finish_date"
@@ -115,6 +126,21 @@ ActiveRecord::Schema.define(:version => 20121111152428) do
   add_index "kases", ["contract_id"], :name => "index_kases_on_contract_id"
   add_index "kases", ["customer_id"], :name => "index_kases_on_customer_id"
   add_index "kases", ["user_id"], :name => "index_kases_on_user_id"
+
+  create_table "payments", :force => true do |t|
+    t.integer  "kase_id"
+    t.integer  "amount"
+    t.date     "payment_date"
+    t.string   "origin_account"
+    t.string   "origin_bank"
+    t.string   "benef_account"
+    t.string   "payment_method"
+    t.string   "idno"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "payments", ["kase_id"], :name => "index_payments_on_kase_id"
 
   create_table "persons", :force => true do |t|
     t.string   "firstname"

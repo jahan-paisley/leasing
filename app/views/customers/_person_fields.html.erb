@@ -69,10 +69,11 @@
       </div>
       <div class="field">
         <%= f.label :education %>
-        <%= f.select :education, person_educations_options,{:include_blank => true} %>
+        <%= f.select :education, person_educations_options, {:include_blank => true} %>
+      </div>
+
+      <div class='links'>
+        <%= link_to_add_association 'add address', f, :addresses %>
       </div>
     </div>
-
-    <%= render "address_fields", :person_form => f %>
-
 <% end %>

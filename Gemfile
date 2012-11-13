@@ -10,6 +10,7 @@ gem "rolify"
 gem "client_side_validations", :git => 'git://github.com/bcardarella/client_side_validations.git'
 gem "kaminari"
 gem 'money-rails'
+gem "cocoon"
 
 #gem 'passenger'
 #gem 'omniauth'

@@ -1,4 +1,7 @@
 class KasesController < ApplicationController
+
+  before_filter :authenticate_user!
+
   # GET /kases
   # GET /kases.json
   def index
@@ -33,6 +36,12 @@ class KasesController < ApplicationController
     2.times do
       @kase.contract.guarantors.build
     end
+    2.times do
+      @kase.installments.build
+    end
+    2.times do
+      @kase.payments.build
+    end
 
 
     respond_to do |format|
@@ -50,7 +59,6 @@ class KasesController < ApplicationController
   # POST /kases.json
   def create
     @kase = Kase.new(params[:kase])
-
     respond_to do |format|
       if @kase.save
         format.html { redirect_to @kase, notice: 'Kase was successfully created.' }

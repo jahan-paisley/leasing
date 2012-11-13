@@ -1,5 +1,9 @@
 Leasing::Application.routes.draw do
 
+  resources :payments
+
+  resources :installments
+
   resources :correspondents
 
   resources :guarantors

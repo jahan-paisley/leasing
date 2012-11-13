@@ -1,21 +1,11 @@
 <%= form_for @customer, :validate => true  do |f| %>
-    <% if @customer.errors.any? %>
-        <div id="error_explanation">
-          <%# TODO%>
-          <h2><%= @customer.errors.count %> خطا مانع عملیات شده است:</h2>
-          <ul>
-            <% @customer.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
+    <%= render 'shared/validation_error_summary', locals = {:object => @customer} %>
 
     <div class="tabbable">
       <ul class="nav nav-tabs">
-        <li class="active"><a href="#pane1" data-toggle="tab">اطلاعات مشتری</a></li>
-        <li><a href="#pane2" data-toggle="tab">آدرس اول</a></li>
-        <li><a href="#pane3" data-toggle="tab">آدرس دوم</a></li>
+        <li class="active"><a href="#pane1" data-toggle="tab"><%= t 'activerecord.models.customer' %></a></li>
+        <li><a href="#pane2" data-toggle="tab"><%= t 'activerecord.models.address' %> 1</a></li>
+        <li><a href="#pane3" data-toggle="tab"><%= t 'activerecord.models.address' %> 2</a></li>
       </ul>
       <div class="tab-content">
         <%= render 'person_fields', :customer_form => f %>

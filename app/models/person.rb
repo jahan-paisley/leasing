@@ -7,9 +7,12 @@ class Person < ActiveRecord::Base
                   :title, :job_title, :job_position, :job_company,
                   :job_industry, :education, :addresses_attributes #,:primary_address_id
   has_one :customer
+  has_one :guarantor
+
   has_many :addresses#, :dependent => :destroy
   #has_one :primary_address, :class_name => 'Address'
-  accepts_nested_attributes_for :addresses #,:reject_if => proc { |attributes| attributes['name'].blank? }#, :allow_destroy => true
+  accepts_nested_attributes_for :addresses , :reject_if => :all_blank, :allow_destroy => true
+  #,:reject_if => proc { |attributes| attributes['name'].blank? }#, :allow_destroy => true
 
   validates :nationalno, :nationalno => true, :uniqueness => true
   validates :firstname, :lastname, :gender, :nationalno, :presence => true
