@@ -1,79 +1,25 @@
-<%= customer_form.fields_for :person do |f| %>
-    <div id="pane1" class="tab-pane active">
-      <h4>اطلاعات پایه</h4>
+<div id="pane1" class="tab-pane active">
+  <h4>اطلاعات پایه</h4>
+  <%= f.input :firstname %>
+  <%= f.input :lastname %>
+  <%= f.input :identity_no %>
+  <%= f.input :nationalno %>
+  <%= f.input :birthdate, :as => :string, :input_html => {:class => "date"} %>
+  <%= f.input :identity_serial %>
+  <%= f.input :fathername %>
+  <%= f.input :identity_issue_date, :as => :string, :input_html => {:class => "date"} %>
+  <%= f.input :identity_issue_city %>
+  <%= f.input :gender, :collection => person_genders_options, :include_blank => true %>
+  <%= f.input :marital_status, :collection => person_marital_options, :include_blank => true %>
+  <%= f.input :title %>
+  <%= f.input :job_title %>
+  <%= f.input :job_position %>
+  <%= f.input :job_company %>
+  <%= f.input :job_industry %>
+  <%= f.input :education, :collection => person_educations_options, :include_blank => true %>
+</div>
+<%= link_to_add_association 'add address', f, :addresses, :render_options => {:wrapper => 'bootstrap'} %>
 
-      <div class="field">
-        <%= f.label :firstname %>
-        <%= f.text_field :firstname %>
-      </div>
-      <div class="field">
-        <%= f.label :lastname %>
-        <%= f.text_field :lastname %>
-      </div>
-      <div class="field">
-        <%= f.label :identity_no %>
-        <%= f.text_field :identity_no %>
-      </div>
-      <div class="field">
-        <%= f.label :nationalno %>
-        <%= f.text_field :nationalno %>
-      </div>
-      <div class="field">
-        <%= f.label :birthdate %>
-        <%= f.text_field :birthdate, :class => "date" %>
-      </div>
-      <div class="field">
-        <%= f.label :identity_serial %>
-        <%= f.text_field :identity_serial %>
-      </div>
-      <div class="field">
-        <%= f.label :fathername %>
-        <%= f.text_field :fathername %>
-      </div>
-      <div class="field">
-        <%= f.label :identity_issue_date %>
-        <%= f.text_field :identity_issue_date, :class => "date" %>
-      </div>
-      <div class="field">
-        <%= f.label :identity_issue_city %>
-        <%= f.text_field :identity_issue_city %>
-      </div>
-      <div class="field">
-        <%= f.label :gender %>
-        <%= f.select(:gender, person_genders_options, {:include_blank => true}) %>
-      </div>
-      <div class="field">
-        <%= f.label :marital_status %>
-        <%= f.select(:marital_status, person_marital_options, {:include_blank => true}) %>
-      </div>
-      <div class="field">
-        <%= f.label :title %>
-        <%= f.text_field :title %>
-      </div>
-      <div class="field">
-        <%= f.label :job_title %>
-        <%= f.text_field :job_title %>
-      </div>
-      <div class="field">
-        <%= f.label :job_position %>
-        <%= f.text_field :job_position %>
-      </div>
-
-      <div class="field">
-        <%= f.label :job_company %>
-        <%= f.text_field :job_company %>
-      </div>
-      <div class="field">
-        <%= f.label :job_industry %>
-        <%= f.text_field :job_industry %>
-      </div>
-      <div class="field">
-        <%= f.label :education %>
-        <%= f.select :education, person_educations_options, {:include_blank => true} %>
-      </div>
-
-      <div class='links'>
-        <%= link_to_add_association 'add address', f, :addresses %>
-      </div>
-    </div>
+<%= f.simple_fields_for :addresses do |f| %>
+    <%= render "address_fields", :f => f %>
 <% end %>

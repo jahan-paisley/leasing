@@ -21,10 +21,10 @@
   src: url('fonts/47.eot?#') format('eot'), url('fonts/47.woff') format('woff'), url('fonts/47.ttf') format('truetype');
 }
 
-div.field {
+div.control-group {
   float: right;
   min-width: 50% !important;
-  min-height: 60px !important;
+  //min-height: 60px !important;
 }
 
 div.action {

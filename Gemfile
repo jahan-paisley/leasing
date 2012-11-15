@@ -11,6 +11,8 @@ gem "client_side_validations", :git => 'git://github.com/bcardarella/client_side
 gem "kaminari"
 gem 'money-rails'
 gem "cocoon"
+gem "simple_form"
+
 
 #gem 'passenger'
 #gem 'omniauth'

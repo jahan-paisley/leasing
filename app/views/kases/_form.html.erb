@@ -17,6 +17,7 @@
           </div>
           <div class="field">
             <%= f.label :customer %>
+            <%= f.association :customer, :collection => Customer.all, :prompt => 'Choose an existing owner' %>
             <%= f.select(:customer_id, Customer.all.collect { |p| [p.person.lastname+ ', ' + p.person.firstname, p.id] }, {:include_blank => true}) %>
           </div>
           <div class="field">

@@ -33,9 +33,7 @@ class CustomersController < ApplicationController
   def new
     @customer = Customer.new
     @customer.build_person
-    2.times do
-      @customer.person.addresses.build
-    end
+    @customer.person.addresses.build
 
     respond_to do |format|
       format.html # new.html.erb

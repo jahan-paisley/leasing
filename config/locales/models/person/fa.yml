@@ -26,11 +26,12 @@ fa:
         education: 'تحصیلات'
         job_company: 'شرکت/سازمان'
         job_industry: 'صنعت'
+        addresses: 'آدرسها'
       customer:
         legal_type: 'نوع مشتری'
       address: &address_atts
         category: 'نوع آدرس'
-        city_id: 'شهر'
+        city: 'شهر'
         priority: 'اولویت'
         description: 'توضیحات'
         level1: 'قسمت ۱'
