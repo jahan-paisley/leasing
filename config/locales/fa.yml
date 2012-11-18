@@ -116,9 +116,9 @@ fa:
       odd: باید فرد باشد
       record_invalid: رکورد نامعتبر است %{errors}
       taken: پیشتر گرفته شده
-      too_long: بلند است (حداکثر %{count} کاراکتر)
-      too_short: کوتاه است (حداقل %{count} کاراکتر)
-      wrong_length: نااندازه است (باید %{count} کاراکتر باشد)
+      too_long: بلند است (حداکثر %{count} مورد)
+      too_short: کافی نیست (حداقل %{count} مورد)
+      wrong_length: نااندازه است (باید %{count} مورد باشد)
     template:
       body: ! 'موارد زیر مشکل داشت:'
       header:

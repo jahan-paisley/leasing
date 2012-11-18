@@ -18,4 +18,13 @@ fa:
   kases: 'لیست پرونده ها'
   edit_kase: ''
   destroy_kase: 'حذف پرونده'
-
+  add_address: 'اضافه کردن آدرس'
+  remove_address: 'حذف آدرس'
+  add_guarantee: 'اضافه کردن وثیقه'
+  remove_guarantee:  'حذف وثیقه'
+  add_guarantor: 'اضافه کردن ضامن'
+  remove_guarantor:  'حذف ضامن'
+  add_installment: "اضافه کردن قسط"
+  remove_installment: "حذف قسط"
+  add_payment: "اضافه کردن پرداخت"
+  remove_payment: "حذف پرداخت"

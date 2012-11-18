@@ -2,9 +2,14 @@
     <%= render 'shared/validation_error_summary', locals = {:object => @customer} %>
     <div class="tabbable">
       <ul class="nav nav-tabs">
-        <li class="active">
-          <a href="#pane1" data-toggle="tab">
+        <li class="active" >
+          <a href="#pane0" data-toggle="tab">
             <%= t 'activerecord.models.customer' %>
+          </a>
+        </li>
+        <li >
+          <a href="#pane1" data-toggle="tab">
+            <%= t 'activerecord.models.person' %>
           </a>
         </li>
         <li>
@@ -17,8 +22,11 @@
         <%= f.simple_fields_for :person do |person_builder| %>
             <%= render 'person_fields', :f => person_builder %>
         <% end %>
+        <div id="pane0" class="tab-pane active">
+          <%= f.input :legal_type, :collection => customer_legal_types_options, :include_blank => true %>
+        </div>
       </div>
-      <%= f.input :legal_type, :collection => customer_legal_types_options, :include_blank => true %>
+
     </div>
 
     <%= f.button :submit, :class => 'btn-primary' %>

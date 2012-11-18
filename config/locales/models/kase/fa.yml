@@ -28,6 +28,7 @@ fa:
         idno: 'شماره'
         property_id: 'مال به اجاره رفته'
         correspondent_id: 'موسسه مالی/شعبه بانک'
+        correspondent: 'موسسه مالی/شعبه بانک'
         sign_date: ' تاریخ عقد قرارداد'
         total_amount: 'مبلغ اولیه کل'
       guarantee:
@@ -35,6 +36,8 @@ fa:
         description: 'مشخصات'
       guarantor:
         person_id: 'ضامن'
+        person: 'ضامن'
+        category: 'نوع ضمانت'
       installment:
         amount: 'مبلغ'
         due_date: 'تاریخ سررسید'

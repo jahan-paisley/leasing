@@ -9,7 +9,7 @@ class Person < ActiveRecord::Base
   has_one :customer
   has_one :guarantor
 
-  has_many :addresses#, :dependent => :destroy
+  has_many :addresses, :dependent => :destroy
   #has_one :primary_address, :class_name => 'Address'
   accepts_nested_attributes_for :addresses , :reject_if => :all_blank, :allow_destroy => true
   #,:reject_if => proc { |attributes| attributes['name'].blank? }#, :allow_destroy => true
@@ -17,8 +17,9 @@ class Person < ActiveRecord::Base
   validates :nationalno, :nationalno => true, :uniqueness => true
   validates :firstname, :lastname, :gender, :nationalno, :presence => true
   validates :gender, :inclusion => {:in => lambda {|o| GENDERS }}
-  validates :marital_status, :inclusion => {:in => lambda {|o| MARITAL_STATUSES }}
+  validates :marital_status,:presence => true, :inclusion => {:in => lambda {|o| MARITAL_STATUSES }}
   validates :education, :inclusion => {:in => lambda {|o| EDUCATIONS }}, :allow_blank => true
+  validates :addresses, :length => {:minimum => 1}
 
   GENDERS = %w[Male Female]
   MARITAL_STATUSES = %w[Married Single]

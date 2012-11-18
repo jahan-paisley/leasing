@@ -5,7 +5,7 @@ class Customer < ActiveRecord::Base
   has_many :kases
   accepts_nested_attributes_for :person
 
-  validates :legal_type, :inclusion => { :in => lambda { |o| LEGAL_TYPES }}
+  validates :legal_type, :presence => true,:inclusion => { :in => lambda { |o| LEGAL_TYPES }}
 
   LEGAL_TYPES = %w[Individual Business]
 

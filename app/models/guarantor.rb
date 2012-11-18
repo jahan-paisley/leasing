@@ -1,5 +1,5 @@
 class Guarantor < ActiveRecord::Base
-  attr_accessible :person_id
+  attr_accessible :person_id, :category
   belongs_to :person
   has_many :contracts, :through => :contract_guarantors
 end

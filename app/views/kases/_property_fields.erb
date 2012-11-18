@@ -1,16 +1,9 @@
-<%= contract_form.fields_for :property do |f| %>
-    <div class="field">
-      <%= f.label :idno %>
-      <%= f.text_field :idno %>
-    </div>
-    <div class="field">
-      <%= f.label :category %>
-      <%= f.text_field :category %>
-    </div>
-    <div class="field">
-      <%= f.label :description %>
-      <%= f.text_field :description %>
-    </div>
-    <div class="field">
-    </div>
-<% end %>
+<%= f.input :idno %>
+
+
+<%= f.input :category %>
+
+<%= f.input :description %>
+<div class="control-group">
+</div>
+

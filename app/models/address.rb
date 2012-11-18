@@ -6,7 +6,7 @@ class Address < ActiveRecord::Base
 
   belongs_to :city
   belongs_to :person
-  validates :level1, :level2, :inclusion => {:in => lambda { |o| LEVELS }}
+  validates :level1, :level2, :presence => true, :inclusion => {:in => lambda { |o| LEVELS }}
   validates :category, :inclusion => {:in => lambda { |o| CATEGORIES }}
   validates_presence_of :part1, :part2
   validates :email, :email => true, :allow_blank => true

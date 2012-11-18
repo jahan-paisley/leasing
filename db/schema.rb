@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121112105719) do
+ActiveRecord::Schema.define(:version => 20121118205256) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "person_id"
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(:version => 20121112105719) do
     t.integer  "person_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "category"
   end
 
   add_index "guarantors", ["person_id"], :name => "index_guarantors_on_person_id"

@@ -1,29 +1,10 @@
-<%= kase_form.fields_for :contract do |f| %>
-
-    <div class="field">
-      <%= f.label :idno %>
-      <%= f.text_field :idno %>
-    </div>
-    <div class="field">
-      <%= f.label :correspondent_id %>
-      <%= f.select(:correspondent_id, Correspondent.all.collect { |p| [p.name, p.id] }, {:include_blank => true}) %>
-    </div>
-    <div class="field">
-      <%= f.label :category %>
-      <%= f.text_field :category %>
-    </div>
-    <div class="field">
-      <%= f.label :due_date %>
-      <%= f.text_field :due_date, :class => 'date' %>
-    </div>
-    <div class="field">
-      <%= f.label :total_amount %>
-      <%= f.number_field :total_amount %>
-    </div>
-    <div class="field">
-      <%= f.label :sign_date %>
-      <%= f.text_field :sign_date, :class => 'date' %>
-    </div>
+<%= kase_form.simple_fields_for :contract do |f| %>
+    <%= f.input :idno %>
+    <%= f.association :correspondent, :collection => Correspondent.all.collect { |p| [p.name, p.id] }, :include_blank => true %>
+    <%= f.input :category %>
+    <%= f.input :due_date, :as => :string, :html_options => {:class => 'date'} %>
+    <%= f.input :total_amount %>
+    <%= f.input :sign_date, :as => :string, :html_options => {:class => 'date'} %>
     <div class="tabbable">
       <ul class="nav nav-tabs">
         <li class="active"><a href="#pane11" data-toggle="tab"><%= t 'activerecord.models.property' %> </a></li>
@@ -33,15 +14,33 @@
       <div class="tab-content">
         <div id="pane11" class="tab-pane active">
           <h4><%= t 'activerecord.models.property' %></h4>
-          <%= render 'property_fields', :contract_form => f %>
+          <%= f.simple_fields_for :property do |ff| %>
+              <%= render 'property_fields', :f => ff %>
+          <% end %>
+
         </div>
         <div id="pane12" class="tab-pane">
           <h4><%= t 'activerecord.models.guarantee' %></h4>
-          <%= render 'guarantees_fields', :contract_form => f %>
+          <%= link_to_add_association (t 'add_guarantee'), f, :guarantees,
+                                      {"data-association-insertion-node" => "#guarantee_list",
+                                       "data-association-insertion-method" => "append"} %>
+          <%= f.simple_fields_for :guarantees do |ff| %>
+              <div id="guarantee_list">
+                <%= render 'guarantee_fields', :f => ff %>
+              </div>
+          <% end %>
+
         </div>
         <div id="pane13" class="tab-pane">
           <h4><%= t 'activerecord.models.guarantor' %></h4>
-          <%= render 'guarantors_fields', :contract_form => f %>
+          <%= link_to_add_association (t 'add_guarantor'), f, :guarantors,
+                                      {"data-association-insertion-node" => "#guarantor_list",
+                                       "data-association-insertion-method" => "append"} %>
+          <%= f.simple_fields_for :guarantors do |ff| %>
+              <div id="guarantor_list">
+                <%= render 'guarantor_fields', :f => ff %>
+              </div>
+          <% end %>
         </div>
       </div>
     </div>

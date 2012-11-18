@@ -1,4 +1,4 @@
-<div id="pane1" class="tab-pane active">
+<div id="pane1" class="tab-pane">
   <h4>اطلاعات پایه</h4>
   <%= f.input :firstname %>
   <%= f.input :lastname %>
@@ -18,8 +18,16 @@
   <%= f.input :job_industry %>
   <%= f.input :education, :collection => person_educations_options, :include_blank => true %>
 </div>
-<%= link_to_add_association 'add address', f, :addresses, :render_options => {:wrapper => 'bootstrap'} %>
 
-<%= f.simple_fields_for :addresses do |f| %>
-    <%= render "address_fields", :f => f %>
-<% end %>
+<div id="pane2" class="tab-pane">
+  <div id="address_list">
+    <h4>آدرس</h4>
+    <%= link_to_add_association (t 'add_address'), f, :addresses,
+                                {"data-association-insertion-node" => "#address_list",
+                                 "data-association-insertion-method" => "append"}
+    %>
+    <%= f.simple_fields_for :addresses do |ff| %>
+        <%= render "address_fields", :f => ff %>
+    <% end %>
+  </div>
+</div>

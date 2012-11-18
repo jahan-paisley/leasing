@@ -52,3 +52,16 @@ div.action {
   text-align: center;
 }
 
+.column-filler {
+  min-height: 60px;
+}
+
+.one_line_hr {
+  width: 100%;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgb(229, 229, 229);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(255, 255, 255);
+}

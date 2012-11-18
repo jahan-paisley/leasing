@@ -1,8 +1,0 @@
-<% @kase.contract.guarantors.each_with_index do |guarantor, index| %>
-    <%= contract_form.fields_for :guarantors, guarantor do |f| %>
-        <div class="field">
-          <%= f.label :person_id %>
-          <%= f.select(:person_id, Person.all.collect { |p| [p.to_s, p.id] }, {:include_blank => true}) %>
-        </div>
-    <% end %>
-<% end %>
