@@ -1,26 +1,25 @@
-
-
-  <div class='nested-fields'>
-    <%= f.input :category, :collection => address_categories_options %>
-    <%= f.association :city %>
-    <%= f.input :district %>
-    <div class="control-group column-filler"></div>
-    <%= f.input :level1, :collection => address_levels_options, :include_blank => true %>
-    <%= f.input :part1 %>
-    <%= f.input :level2, :collection => address_levels_options, :include_blank => true %>
-    <%= f.input :part2 %>
-    <%= f.input :level3, :collection => address_levels_options, :include_blank => true %>
-    <%= f.input :part3 %>
-    <%= f.input :address_no, :input_html => {:class => 'number'} %>
-    <%= f.input :postal_code, :input_html => {:class => 'number'} %>
-    <%= f.input :unit_name %>
-    <%= f.input :building_name %>
-    <%= f.input :phones, :input_html => {:class => 'number'} %>
-    <%= f.input :mobiles, :input_html => {:class => 'number'} %>
-    <%= f.input :email, :input_html => {:class => 'english'} %>
-    <%= f.hidden_field :latitude %>
-    <%= f.hidden_field :longitude %>
-    <%= f.input :description, :as => :text, :input_html => {:style => 'height:50px'} %>
-    <%= link_to_remove_association (t "remove_address"), f %>
-  </div>
+<div class='nested-fields'>
+  <%= f.input :category, :collection => address_categories_options %>
+  <%= f.association :city %>
+  <%= f.input :district %>
+  <div class="control-group column-filler"></div>
+  <%= f.input :level1, :collection => address_levels_options, :include_blank => true %>
+  <%= f.input :part1 %>
+  <%= f.input :level2, :collection => address_levels_options, :include_blank => true %>
+  <%= f.input :part2 %>
+  <%= f.input :level3, :collection => address_levels_options, :include_blank => true %>
+  <%= f.input :part3 %>
+  <%= f.input :address_no, :input_html => {:class => 'number'} %>
+  <%= f.input :postal_code, :input_html => {:class => 'number'} %>
+  <%= f.input :unit_name %>
+  <%= f.input :building_name %>
+  <%= f.input :phones, :input_html => {:class => 'number'} %>
+  <%= f.input :mobiles, :input_html => {:class => 'number'} %>
+  <%= f.input :email, :input_html => {:class => 'english'} %>
+  <%= f.hidden_field :latitude %>
+  <%= f.hidden_field :longitude %>
+  <%= f.input :description, :as => :text, :input_html => {:style => 'height:50px'} %>
+  <%= link_to_remove_association (t "remove_address"), f %>
+  <hr class="one-line-hr">
+</div>
 

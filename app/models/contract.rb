@@ -6,8 +6,9 @@ class Contract < ActiveRecord::Base
   has_one :kase
   belongs_to :property
   belongs_to :correspondent
-  has_many :guarantees
-  has_many :contract_guarantors
+  has_many :guarantees, :dependent => :destroy
+  has_many :contract_guarantors, :dependent => :destroy
   has_many :guarantors, :through => :contract_guarantors
+  
   accepts_nested_attributes_for :property, :guarantees, :guarantors
 end

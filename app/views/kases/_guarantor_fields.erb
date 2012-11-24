@@ -1,6 +1,6 @@
 <div class='nested-fields'>
   <%= f.input :category %>
-  <%= f.association :person, :collection => Person.all.collect { |p| [p.to_s, p.id] }, :include_blank => true %>
+  <%= f.association :person, :collection => Person.order('lastname ASC, firstname ASC').all.collect { |p| [p.to_s, p.id] }, :include_blank => true %>
   <%= link_to_remove_association (t "remove_guarantor"), f %>
   <hr class="one-line-hr">
 </div>

@@ -1,6 +1,8 @@
 require 'spec_helper'
 
-describe Customer do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Person do
+  it 'should return true on correct nationalnos' do
+    Nationalno.nationalno_is_valid('1234567891').should_be true 
+  end
 
 end

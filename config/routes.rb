@@ -1,18 +1,11 @@
 Leasing::Application.routes.draw do
 
-  resources :payments
-
-  resources :installments
-
+  get "etl/import" => "etl#get_import"
+  post "etl/import" => "etl#post_import"
+  get "etl/export" => "etl#get_export"
+  post "etl/export" => "etl#post_export"
+  
   resources :correspondents
-
-  resources :guarantors
-
-  resources :guarantees
-
-  resources :properties
-
-  resources :contracts
 
   resources :kases
 

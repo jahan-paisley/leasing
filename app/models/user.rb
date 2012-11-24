@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me #,:lockable, :timeoutable, :omniauthable
   has_many :kases
+
+  def to_s
+    name || ''
+  end
 end

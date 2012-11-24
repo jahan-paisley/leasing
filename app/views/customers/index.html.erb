@@ -18,7 +18,7 @@
     <th></th>
     <th></th>
     <th></th>
-  </tr>
+</tr>
 
 <% @customers.each do |cust| %>
   <tr>
@@ -35,7 +35,7 @@
     <td><%= t cust.person.marital_status %></td>
     <td><%= link_to (t 'Show'), cust %>   </td>
     <td><%= link_to (t 'Edit'), edit_customer_path(cust) %>    </td>
-    <td><%= link_to (t 'Destroy'), cust, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to (t 'Destroy'), cust, method: :delete, data: { confirm: (t 'are_you_sure') } %></td>
   </tr>
 <% end %>
 </table>

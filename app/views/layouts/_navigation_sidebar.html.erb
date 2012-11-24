@@ -9,12 +9,11 @@
       <li> <%= link_to (t "edit_customer"), customers_path %></li>
       <li class="nav-header">پرونده ها</li>
       <li><%= link_to (t "new_kase"), new_kase_path %></li>
-      <li><a href="#">جستجو</a></li>
-      <li><a href="#">عملیات اصلی</a></li>
-      <li><a href="#">سایر عملیات</a></li>
-      <li><a href="#">...</a></li>
-      <li class="nav-header">Sidebar</li>
-      <li><a href="#">...</a></li>
+      <li><%= link_to (t "kases"), kases_path%> </li>
+<!--       <li><a href="#">عملیات اصلی</a></li>
+      <li><a href="#">سایر عملیات</a></li> -->
+      <li class="nav-header">ورود و خروج انبوه اطلاعات</li>
+      <li><%= link_to (t "etl_import"), etl_import_path %> </li>
       <li><a href="#">...</a></li>
       <li><a href="#">...</a></li>
     </ul>

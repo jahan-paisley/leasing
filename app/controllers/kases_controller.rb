@@ -5,8 +5,9 @@ class KasesController < ApplicationController
   # GET /kases
   # GET /kases.json
   def index
-    @kases = Kase.all
-
+    @kases = Kase.order("created_at").page(params[:page]).per(10)
+    @kases.each { |o| to_jalali o }
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @kases }
@@ -28,22 +29,7 @@ class KasesController < ApplicationController
   # GET /kases/new.json
   def new
     @kase = Kase.new
-    @kase.build_contract
-    @kase.contract.build_property
-    2.times do
-      @kase.contract.guarantees.build
-    end
-    2.times do
-      @kase.contract.guarantors.build
-    end
-    2.times do
-      @kase.installments.build
-    end
-    2.times do
-      @kase.payments.build
-    end
-
-
+    @kase.build
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @kase }
@@ -53,6 +39,7 @@ class KasesController < ApplicationController
   # GET /kases/1/edit
   def edit
     @kase = Kase.find(params[:id])
+    @kase = to_jalali @kase
   end
 
   # POST /kases

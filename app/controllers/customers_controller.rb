@@ -32,8 +32,7 @@ class CustomersController < ApplicationController
   # GET /customers/new.json
   def new
     @customer = Customer.new
-    @customer.build_person
-    @customer.person.addresses.build
+    @customer.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -50,7 +49,7 @@ class CustomersController < ApplicationController
   # POST /customers
   # POST /customers.json
   def create
-    to_gregorian (params)
+    to_gregorian (params[:customer])
     @customer = Customer.new(params[:customer])
     respond_to do |format|
       if @customer.save
@@ -66,7 +65,7 @@ class CustomersController < ApplicationController
   # PUT /customers/1
   # PUT /customers/1.json
   def update
-    to_gregorian params
+    to_gregorian (params[:customer])
     @customer = Customer.find(params[:id])
     respond_to do |format|
       if @customer.update_attributes(params[:customer])

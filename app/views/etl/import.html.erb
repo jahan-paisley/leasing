@@ -1,0 +1,8 @@
+<%= form_tag({:action => :post_import}, :multipart => true) do %>
+    <h1><%= t 'etl_import' %></h1>
+    <br>
+    <%= file_field_tag 'excel_file' %>
+    <br>
+    <br>
+    <%= submit_tag (t 'etl_import'), :class => 'btn-primary' %>
+<% end %>

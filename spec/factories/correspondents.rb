@@ -1,8 +1,9 @@
+#encoding: utf-8
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
   factory :correspondent do
-    name "MyString"
-    category "MyString"
+    name 'بانک انصار'
+    category 'بانک'
   end
 end

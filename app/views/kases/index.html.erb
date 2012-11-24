@@ -1,35 +1,35 @@
-<h1>Listing kases</h1>
-
+<h1><%= t ("kases") %></h1>
+<%= paginate @kases %>
 <table>
   <tr>
-    <th>Start date</th>
-    <th>Finish date</th>
-    <th>Customer</th>
-    <th>User</th>
-    <th>Status</th>
-    <th>idno</th>
-    <th>Receipt date</th>
+    <th><%= Kase.human_attribute_name("kase.idno") %></th>
+    <th><%= Kase.human_attribute_name("kase.customer") %></th>
+    <th><%= Kase.human_attribute_name("kase.user") %></th>
+    <th><%= Kase.human_attribute_name("kase.status") %></th>
+    <th><%= Kase.human_attribute_name("kase.receipt_date") %></th>
+    <th><%= Kase.human_attribute_name("kase.start_date") %></th>
+    <th><%= Kase.human_attribute_name("kase.finish_date") %></th>
     <th></th>
     <th></th>
     <th></th>
-  </tr>
+</tr>
 
 <% @kases.each do |kase| %>
-  <tr>
-    <td><%= kase.start_date %></td>
-    <td><%= kase.finish_date %></td>
+<tr>
+    <td><%= kase.idno %></td>
     <td><%= kase.customer %></td>
     <td><%= kase.user %></td>
     <td><%= kase.status %></td>
-    <td><%= kase.idno %></td>
     <td><%= kase.receipt_date %></td>
-    <td><%= link_to 'Show', kase %></td>
-    <td><%= link_to 'Edit', edit_kase_path(kase) %></td>
-    <td><%= link_to 'Destroy', kase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <td><%= kase.start_date %></td>
+    <td><%= kase.finish_date %></td>
+    <td><%= link_to (t 'Show'), kase %></td>
+    <td><%= link_to (t 'Edit'), edit_kase_path(kase) %></td>
+    <td><%= link_to (t 'Destroy'), kase, method: :delete, data: { confirm: (t 'are_you_sure') } %></td>
+</tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Kase', new_kase_path %>
+<%= link_to (t 'new_kase'), new_kase_path %>

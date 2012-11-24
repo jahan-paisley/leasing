@@ -16,7 +16,7 @@ fa:
   users: 'نمایش اطلاعات کاربران'
   new_kase: 'پرونده جدید'
   kases: 'لیست پرونده ها'
-  edit_kase: ''
+  edit_kase: 'ویرایش پرونده'
   destroy_kase: 'حذف پرونده'
   add_address: 'اضافه کردن آدرس'
   remove_address: 'حذف آدرس'
@@ -28,3 +28,5 @@ fa:
   remove_installment: "حذف قسط"
   add_payment: "اضافه کردن پرداخت"
   remove_payment: "حذف پرداخت"
+  add_customer: "اضافه کردن مشتری"
+  etl_import: "وارد کردن اطلاعات از طریق  Excel"

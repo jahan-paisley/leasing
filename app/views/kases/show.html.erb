@@ -1,40 +1,38 @@
 <p id="notice"><%= notice %></p>
-
 <p>
-  <b>Start date:</b>
-  <%= @kase.start_date %>
-</p>
-
-<p>
-  <b>Finish date:</b>
-  <%= @kase.finish_date %>
-</p>
-
-<p>
-  <b>Customer:</b>
-  <%= @kase.customer %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @kase.user %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%= @kase.status %>
-</p>
-
-<p>
-  <b>idno:</b>
+  <b><%= Kase.human_attribute_name("kase.idno") %> :</b>
   <%= @kase.idno %>
 </p>
 
 <p>
-  <b>Receipt date:</b>
+  <b><%= Kase.human_attribute_name("kase.customer") %> :</b>
+  <%= @kase.customer %>
+</p>
+
+<p>
+  <b><%= Kase.human_attribute_name("kase.user") %> :</b>
+  <%= @kase.user %>
+</p>
+
+<p>
+  <b><%= Kase.human_attribute_name("kase.status") %> :</b>
+  <%= @kase.status %>
+</p>
+
+<p>
+  <b><%= Kase.human_attribute_name("kase.receipt_date") %> :</b>
   <%= @kase.receipt_date %>
 </p>
 
+<p>
+  <b><%= Kase.human_attribute_name("kase.start_date") %> :</b>
+  <%= @kase.start_date %>
+</p>
 
-<%= link_to 'Edit', edit_kase_path(@kase) %> |
-<%= link_to 'Back', kases_path %>
+<p>
+  <b><%= Kase.human_attribute_name("kase.finish_date") %> :</b>
+  <%= @kase.finish_date %>
+</p>
+
+<%= link_to (t 'Edit'), edit_kase_path(@kase) %> |
+<%= link_to (t 'Back'), kases_path %>

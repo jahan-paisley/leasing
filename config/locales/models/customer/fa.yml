@@ -1,0 +1,56 @@
+# encoding: utf-8
+fa:
+  activerecord:
+    models:
+      person: 'شخص'
+      customer: 'مشتری'
+      address: 'آدرس'
+    attributes:
+      person:
+        firstname: 'نام'
+        lastname: 'آدرس'
+        birthdate: 'تاریخ تولد'
+        fathername: 'نام پدر'
+        firstname: 'نام'
+        gender: 'جنسیت'
+        identity_issue_city: 'محل صدور'
+        identity_issue_date: 'تاریخ صدور'
+        identity_no: 'شماره شناسنامه'
+        identity_serial: 'سریال شناسنامه'
+        lastname: 'نام خانوادگی'
+        marital_status: 'وضعیت تاهل'
+        nationalno: 'شماره ملی'
+        title: 'عنوان'
+        job_title: 'شغل'
+        job_position: 'سمت'
+        education: 'تحصیلات'
+        job_company: 'شرکت/سازمان'
+        job_industry: 'صنعت'
+        addresses: 'آدرسها'
+      customer:
+        legal_type: 'نوع مشتری'
+      address: &address_atts
+        category: 'نوع آدرس'
+        city: 'شهر'
+        priority: 'اولویت'
+        description: 'توضیحات'
+        level1: 'قسمت ۱'
+        level2: 'قسمت ۲'
+        level3: 'قسمت ۳'
+        part1: 'وروردی ۱'
+        part2: 'وروردی ۲'
+        part3: 'وروردی ۳'
+        phones: 'تلفن ها'
+        email: 'ایمیل'
+        mobiles: 'موبایل ها'
+        latitude: 'عرض'
+        longitude: 'طول'
+        postal_code: 'کد پستی'
+        unit_name: 'واحد'
+        building_name: 'ساختمان'
+        address_no: 'پلاک'
+        district: 'محله/منطقه'
+      person/addresses:
+        <<: *address_atts
+
+

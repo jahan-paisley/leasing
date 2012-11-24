@@ -14,20 +14,25 @@ class Person < ActiveRecord::Base
   accepts_nested_attributes_for :addresses , :reject_if => :all_blank, :allow_destroy => true
   #,:reject_if => proc { |attributes| attributes['name'].blank? }#, :allow_destroy => true
 
-  validates :nationalno, :nationalno => true, :uniqueness => true
-  validates :firstname, :lastname, :gender, :nationalno, :presence => true
-  validates :gender, :inclusion => {:in => lambda {|o| GENDERS }}
-  validates :marital_status,:presence => true, :inclusion => {:in => lambda {|o| MARITAL_STATUSES }}
+  #validates :nationalno, :nationalno => true, :uniqueness => true
+  #TODO turn on validation
+  #validates :firstname, :lastname, :gender, :nationalno, :marital_status, :presence => true
+  #validates :addresses, :length => {:minimum => 1}
+  #validates :gender, :inclusion => {:in => lambda {|o| GENDERS }}
+  #validates :marital_status, :inclusion => {:in => lambda {|o| MARITAL_STATUSES }}
   validates :education, :inclusion => {:in => lambda {|o| EDUCATIONS }}, :allow_blank => true
-  validates :addresses, :length => {:minimum => 1}
 
   GENDERS = %w[Male Female]
   MARITAL_STATUSES = %w[Married Single]
   EDUCATIONS = %w[Illiterate UnderDiploma Diploma Bachelor Master PhD Hawzah]
 
+  def build
+    addresses.build
+    addresses.each { |e| e.build }
+  end
 
   def to_s
-    "#{lastname}, #{firstname}"
+    "#{firstname || ' '} #{lastname || ' '}" 
   end
 
 end

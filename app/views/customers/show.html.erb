@@ -1,19 +1,15 @@
 <h3>
-	<%= Customer.model_name.human %>
+  <%= Customer.model_name.human %>
 </h3>
 <p>
-	<br>
-	<% if notice %>
-</p>
-<div id="notice">
-	<%= notice %>
-</div><% end %><%= render 'show_person', :f => @customer%>
+  <br></p>
+<%= render 'show_person', :f => @customer %>
 <div class='field'>
-	<p>
-		<b><%= Customer.human_attribute_name("legal_type") %>:</b> <%= t @customer.legal_type %>
-	</p>
+  <p>
+    <b><%= Customer.human_attribute_name("legal_type") %>:</b> <%= t @customer.legal_type %>
+  </p>
 </div>
 <p>
-	<br>
-	<%= link_to (t 'Edit'), edit_customer_path(@customer) %> | <%= link_to (t 'Back'), customers_path %>
+  <br>
+  <%= link_to (t 'Edit'), edit_customer_path(@customer) %> | <%= link_to (t 'Back'), customers_path %>
 </p>

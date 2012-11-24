@@ -11,11 +11,20 @@
         <div id="pane1" class="tab-pane active">
           <h4><%= t 'activerecord.models.kase' %></h4>
           <%= f.input :idno %>
-          <%= f.association :customer, :collection => Customer.all.collect { |p| [p.person.lastname+ ', ' + p.person.firstname, p.id] }, :prompt => 'Choose an existing owner' %>
+          <%= f.association :customer, 
+            :collection => 
+              Customer.find(:all, :include => :person, 
+                :order => "persons.lastname, persons.firstname").collect { |p| [p.to_s, p.id] } %>
+          <!-- , :prompt => 'انتخاب مشتری موجود' -->
+          <%#= link_to_add_association (t 'add_customer'), f, :customer,
+                                      {"data-association-insertion-node" => "#customer",
+                                       "data-association-insertion-method" => "append",
+                                        :partial => '/customers/form'} %>
+          <%#= render :partial => '/customers/form', :customer => @kase.build_customer %>
           <%= f.input :receipt_date, :as => :string, :input_html => {:class => "date"} %>
           <%= f.input :start_date, :as => :string, :input_html => {:class => "date"} %>
           <%= f.input :finish_date, :as => :string, :input_html => {:class => "date"} %>
-          <%= f.association :user, :collection => User.all.collect { |p| [p.name, p.id] }, :include_blank => true %>
+          <%= f.association :user, :collection => User.all.collect { |p| [p.to_s, p.id] }, :include_blank => true %>
           <%= f.input :status %>
         </div>
         <div id="pane2" class="tab-pane">

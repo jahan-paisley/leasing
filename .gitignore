@@ -26,3 +26,13 @@ pickle-email-*.html
 **.sqlite3
 
 **.log
+
+*.xlsx
+
+config/.DS_Store
+
+config/locales/models/.DS_Store
+
+.project
+
+*.prefs
