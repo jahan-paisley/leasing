@@ -6,8 +6,8 @@ class Customer < ActiveRecord::Base
   accepts_nested_attributes_for :person
   
   #TODO turn on validation
-  #validates :legal_type, :presence => tru
-  #validates :legal_type, :inclusion => { :in => lambda { |o| LEGAL_TYPES }}
+  #validates :legal_type, :presence => true
+  #validates :legal_type, :inclusion => { :in => lambda { |_| LEGAL_TYPES }}
 
   LEGAL_TYPES = %w[Individual Business]
 

@@ -1,6 +1,8 @@
 # encoding : utf-8
 class EtlController < ApplicationController
 
+  before_filter :authenticate_user!
+
   def post_import
     uploaded_io = params[:excel_file]
     path = Rails.root.join('public', 'uploads', uploaded_io.original_filename)

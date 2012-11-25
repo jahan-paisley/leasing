@@ -6,10 +6,11 @@ class Address < ActiveRecord::Base
 
   belongs_to :city
   belongs_to :person
-  #TODO enable validations
-  #validates :level1, :level2, :presence => true, :inclusion => {:in => lambda { |o| LEVELS }}
-  #validates :category, :inclusion => {:in => lambda { |o| CATEGORIES }}
-  #validates_presence_of :part1, :part2
+
+  #validates :level1, :level2, :presence => true, :inclusion => {:in => lambda { |_| LEVELS }}
+  #validates :category, :inclusion => {:in => lambda { |_| CATEGORIES }}
+  #validates :part1, :part2, :presence => true
+
   validates :email, :email => true, :allow_blank => true
   validates :phones, :format => {:with => /^(0[1-8]\d{9}[-,])*0[1-8]\d{9}$/i, :on => :create}, :allow_blank => true
   validates :mobiles, :format => {:with => /^(09\d{9}[-,])*09\d{9}$/i, :on => :create}, :allow_blank => true

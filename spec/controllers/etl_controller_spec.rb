@@ -1,8 +1,10 @@
 require 'spec_helper'
 
 describe EtlController do
+
   before (:each) do
-    FactoryGirl.create :user
+    @user = FactoryGirl.create(:user)
+    sign_in @user
   end
 
   describe "GET 'get_import'" do
@@ -14,7 +16,6 @@ describe EtlController do
 
   describe "Post 'post_import'" do
     it "returns success on import data" do
-      login(:user)
       @file = fixture_file_upload(Rails.root.join('public/uploads/rahbar_data.xlsx'), 'application/vnd.ms-excel')
       post :post_import, :excel_file => @file
       Person.all.size.should be > 1

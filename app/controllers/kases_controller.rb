@@ -46,6 +46,7 @@ class KasesController < ApplicationController
   # POST /kases.json
   def create
     @kase = Kase.new(params[:kase])
+
     respond_to do |format|
       if @kase.save
         format.html { redirect_to @kase, notice: 'Kase was successfully created.' }

@@ -1,19 +1,41 @@
 module PersonHelper
   # @param [nationalno] value
-  def nationalno_is_valid value
-    false if value.nil? or value.length == 0
+  def self.valid_nationalno? value
+    #value.size.upto(10) { value = '0'+ value }
+    value = '0' * (10 - value.length) + value
+    return false if value.nil? or value.length == 0
     if value.length == 10
-      if %w(1111111111 0000000000 2222222222 3333333333 4444444444 5555555555 7777777777 8888888888 9999999999).include?(value)
-        false
-      elsif value[0..6] == '0' * 7
+      '0'.upto('9') { |c| return false if c*10 == value }
+      if value[0..6] == '0' * 7
         false
       else
-        c = value[9].to_i
-        0.upto(8) { |i| n += value[i].to_i * (10-i)}
-        r = n - (n / 11).to_i * 11
-        return ((r == 0 && r == c) || (r == 1 && c == 1) || (r > 1 && c == 11 - r))
+        cc = value[9].to_i
+        nn = 0
+        0.upto(8) { |i| nn += value[i].to_i * (10-i) }
+        rr = nn - (nn / 11).to_i * 11
+        return ((rr == 0 && rr == cc) || (rr == 1 && cc == 1) || (rr > 1 && cc == 11 - rr))
       end
     end
     false
   end
+
+  def self.gen_nationalno
+    value = rand(123456789..987654321).to_s
+    new_value = value
+    nn = 0
+    0.upto(8) { |i| nn += value[i].to_i * (10-i) }
+    rr = nn - (nn / 11).to_i * 11
+    case
+      when rr == 0
+        new_value << '0'
+      when rr == 1
+        new_value << '1'
+      when rr > 1
+        new_value << (11 - rr).to_s
+      else
+        return gen_nationalno
+    end
+    new_value
+  end
+
 end

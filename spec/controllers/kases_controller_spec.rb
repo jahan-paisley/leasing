@@ -20,11 +20,51 @@ require 'spec_helper'
 
 describe KasesController do
 
+  before (:each) do
+    @user = FactoryGirl.create(:user)
+    sign_in @user
+  end
+
   # This should return the minimal set of attributes required to create a valid
   # Kase. As you add validations to Kase, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {"idno" => "1",
+     "customer_id" => "1",
+     "receipt_date" => "1391/09/04",
+     "start_date" => "1391/09/23",
+     "finish_date" => "1391/09/30",
+     "status" => "",
+     "contract_attributes" =>
+         {"idno" => "",
+          "correspondent_id" => "1",
+          "category" => "",
+          "due_date" => "",
+          "total_amount" => "",
+          "sign_date" => "",
+          "property_attributes" =>
+              {"idno" => "123", "category" => "Pride", "description" => ""},
+          "guarantees_attributes" =>
+              {"0" => {"amount" => "222", "description" => "", "_destroy" => ""}},
+          "guarantors_attributes" =>
+              {"0" => {"category" => "GuranteeType", "person_id" => "1", "_destroy" => ""}}
+         },
+     "installments_attributes" =>
+         {"0" =>
+              {"amount" => "123456",
+               "due_date" => "1391/09/22",
+               "paid" => "0",
+               "_destroy" => ""}},
+     "payments_attributes" =>
+         {"0" =>
+              {"amount" => "12",
+               "payment_date" => "1390/01/01",
+               "origin_account" => "",
+               "origin_bank" => "",
+               "benef_account" => "",
+               "payment_method" => "",
+               "idno" => "",
+               "_destroy" => ""}}}
   end
 
   # This should return the minimal set of values that should be in the session
@@ -37,7 +77,7 @@ describe KasesController do
   describe "GET index" do
     it "assigns all kases as @kases" do
       kase = Kase.create! valid_attributes
-      get :index, {}, valid_session
+      get :index, {}
       assigns(:kases).should eq([kase])
     end
   end
@@ -45,14 +85,14 @@ describe KasesController do
   describe "GET show" do
     it "assigns the requested kase as @kase" do
       kase = Kase.create! valid_attributes
-      get :show, {:id => kase.to_param}, valid_session
+      get :show, {:id => kase.to_param}
       assigns(:kase).should eq(kase)
     end
   end
 
   describe "GET new" do
     it "assigns a new kase as @kase" do
-      get :new, {}, valid_session
+      get :new, {}
       assigns(:kase).should be_a_new(Kase)
     end
   end
@@ -60,7 +100,7 @@ describe KasesController do
   describe "GET edit" do
     it "assigns the requested kase as @kase" do
       kase = Kase.create! valid_attributes
-      get :edit, {:id => kase.to_param}, valid_session
+      get :edit, {:id => kase.to_param}
       assigns(:kase).should eq(kase)
     end
   end
@@ -69,18 +109,18 @@ describe KasesController do
     describe "with valid params" do
       it "creates a new Kase" do
         expect {
-          post :create, {:kase => valid_attributes}, valid_session
+          post :create, {:kase => valid_attributes}
         }.to change(Kase, :count).by(1)
       end
 
       it "assigns a newly created kase as @kase" do
-        post :create, {:kase => valid_attributes}, valid_session
+        post :create, {:kase => valid_attributes}
         assigns(:kase).should be_a(Kase)
         assigns(:kase).should be_persisted
       end
 
       it "redirects to the created kase" do
-        post :create, {:kase => valid_attributes}, valid_session
+        post :create, {:kase => valid_attributes}
         response.should redirect_to(Kase.last)
       end
     end
@@ -89,14 +129,14 @@ describe KasesController do
       it "assigns a newly created but unsaved kase as @kase" do
         # Trigger the behavior that occurs when invalid params are submitted
         Kase.any_instance.stub(:save).and_return(false)
-        post :create, {:kase => {}}, valid_session
+        post :create, {:kase => {}}
         assigns(:kase).should be_a_new(Kase)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Kase.any_instance.stub(:save).and_return(false)
-        post :create, {:kase => {}}, valid_session
+        post :create, {:kase => {}}
         response.should render_template("new")
       end
     end
@@ -111,18 +151,18 @@ describe KasesController do
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
         Kase.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
-        put :update, {:id => kase.to_param, :kase => {'these' => 'params'}}, valid_session
+        put :update, {:id => kase.to_param, :kase => {'these' => 'params'}}
       end
 
       it "assigns the requested kase as @kase" do
         kase = Kase.create! valid_attributes
-        put :update, {:id => kase.to_param, :kase => valid_attributes}, valid_session
+        put :update, {:id => kase.to_param, :kase => valid_attributes}
         assigns(:kase).should eq(kase)
       end
 
       it "redirects to the kase" do
         kase = Kase.create! valid_attributes
-        put :update, {:id => kase.to_param, :kase => valid_attributes}, valid_session
+        put :update, {:id => kase.to_param, :kase => valid_attributes}
         response.should redirect_to(kase)
       end
     end
@@ -132,7 +172,7 @@ describe KasesController do
         kase = Kase.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Kase.any_instance.stub(:save).and_return(false)
-        put :update, {:id => kase.to_param, :kase => {}}, valid_session
+        put :update, {:id => kase.to_param, :kase => {}}
         assigns(:kase).should eq(kase)
       end
 
@@ -140,7 +180,7 @@ describe KasesController do
         kase = Kase.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Kase.any_instance.stub(:save).and_return(false)
-        put :update, {:id => kase.to_param, :kase => {}}, valid_session
+        put :update, {:id => kase.to_param, :kase => {}}
         response.should render_template("edit")
       end
     end
@@ -150,13 +190,13 @@ describe KasesController do
     it "destroys the requested kase" do
       kase = Kase.create! valid_attributes
       expect {
-        delete :destroy, {:id => kase.to_param}, valid_session
+        delete :destroy, {:id => kase.to_param}
       }.to change(Kase, :count).by(-1)
     end
 
     it "redirects to the kases list" do
       kase = Kase.create! valid_attributes
-      delete :destroy, {:id => kase.to_param}, valid_session
+      delete :destroy, {:id => kase.to_param}
       response.should redirect_to(kases_url)
     end
   end
