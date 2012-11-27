@@ -2,20 +2,20 @@
     <%= f.input :idno %>
     <%= f.association :correspondent, :collection => Correspondent.all.collect { |p| [p.name, p.id] }, :include_blank => true %>
     <%= f.input :category %>
-    <%= f.input :due_date, :as => :string, :html_options => {:class => 'date'} %>
+    <%= f.input :due_date, :as => :string, :input_html => {:class => 'date'}  %>
     <%= f.input :total_amount %>
-    <%= f.input :sign_date, :as => :string, :html_options => {:class => 'date'} %>
+    <%= f.input :sign_date, :as => :string, :input_html => {:class => 'date'}  %>
     <div class="tabbable">
       <ul class="nav nav-tabs">
-        <li class="active"><a href="#pane11" data-toggle="tab"><%= t 'activerecord.models.property' %> </a></li>
+        <li class="active"><a href="#pane11" data-toggle="tab"><%= t 'activerecord.models.asset' %> </a></li>
         <li><a href="#pane12" data-toggle="tab"><%= t 'activerecord.models.guarantee' %></a></li>
         <li><a href="#pane13" data-toggle="tab"><%= t 'activerecord.models.guarantor' %></a></li>
       </ul>
       <div class="tab-content">
         <div id="pane11" class="tab-pane active">
-          <h4><%= t 'activerecord.models.property' %></h4>
-          <%= f.simple_fields_for :property do |ff| %>
-              <%= render 'property_fields', :f => ff %>
+          <h4><%= t 'activerecord.models.asset' %></h4>
+          <%= f.simple_fields_for :asset do |ff| %>
+              <%= render 'asset_fields', :f => ff %>
           <% end %>
 
         </div>

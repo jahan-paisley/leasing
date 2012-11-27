@@ -13,6 +13,7 @@ gem 'cocoon'
 gem 'simple_form'
 gem 'roo'
 gem 'axlsx'
+gem "draper"
 
 #gem 'passenger'
 #gem 'omniauth'
@@ -25,6 +26,8 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'spork'
+  gem 'watchr'
   gem 'rspec-rails', '>= 2.12.0'
   gem 'factory_girl_rails', '>= 4.1.0', :require => false
   gem 'sqlite3'

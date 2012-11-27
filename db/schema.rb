@@ -41,6 +41,14 @@ ActiveRecord::Schema.define(:version => 20121118205256) do
   add_index "addresses", ["city_id"], :name => "index_addresses_on_city_id"
   add_index "addresses", ["person_id"], :name => "index_addresses_on_person_id"
 
+  create_table "assets", :force => true do |t|
+    t.string   "idno"
+    t.string   "category"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "cities", :force => true do |t|
     t.string   "name"
     t.integer  "province_id"
@@ -63,7 +71,7 @@ ActiveRecord::Schema.define(:version => 20121118205256) do
     t.string   "category"
     t.date     "due_date"
     t.integer  "total_amount"
-    t.integer  "property_id"
+    t.integer  "asset_id"
     t.date     "sign_date"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
@@ -163,14 +171,6 @@ ActiveRecord::Schema.define(:version => 20121118205256) do
     t.string   "education"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
-  end
-
-  create_table "properties", :force => true do |t|
-    t.string   "idno"
-    t.string   "category"
-    t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
   end
 
   create_table "provinces", :force => true do |t|

@@ -1,6 +1,6 @@
-class CreateProperties < ActiveRecord::Migration
+class CreateAssets < ActiveRecord::Migration
   def change
-    create_table :properties do |t|
+    create_table :assets do |t|
       t.string :idno
       t.string :category
       t.string :description

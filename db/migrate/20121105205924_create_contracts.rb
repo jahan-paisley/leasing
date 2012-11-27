@@ -6,7 +6,7 @@ class CreateContracts < ActiveRecord::Migration
       t.string :category
       t.date :due_date
       t.integer :total_amount
-      t.references :property
+      t.references :asset
       t.date :sign_date
 
       t.timestamps

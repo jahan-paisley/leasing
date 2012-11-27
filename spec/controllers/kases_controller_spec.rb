@@ -42,7 +42,7 @@ describe KasesController do
           "due_date" => "",
           "total_amount" => "",
           "sign_date" => "",
-          "property_attributes" =>
+          "asset_attributes" =>
               {"idno" => "123", "category" => "Pride", "description" => ""},
           "guarantees_attributes" =>
               {"0" => {"amount" => "222", "description" => "", "_destroy" => ""}},

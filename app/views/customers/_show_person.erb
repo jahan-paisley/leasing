@@ -1,56 +1,56 @@
 <div class='field'>
   <p>
-    <b><%= Person.human_attribute_name("firstname") %>:</b> <%= @customer.person.firstname %>
+    <b><%= Person.human_attribute_name("firstname") %>:</b> <%= @customer.firstname %>
   </p>
 </div>
 <div class='field'>
   <p>
-    <b><%= Person.human_attribute_name("lastname") %>:</b> <%= @customer.person.lastname %>
+    <b><%= Person.human_attribute_name("lastname") %>:</b> <%= @customer.lastname %>
   </p>
 </div>
 <div class='field'>
   <p>
-    <b><%= Person.human_attribute_name("identity_no") %>:</b> <%= @customer.person.identity_no %>
+    <b><%= Person.human_attribute_name("identity_no") %>:</b> <%= @customer.identity_no %>
   </p>
 </div>
 <div class='field'>
   <p>
-    <b><%= Person.human_attribute_name("nationalno") %>:</b> <%= @customer.person.nationalno %>
+    <b><%= Person.human_attribute_name("nationalno") %>:</b> <%= @customer.nationalno %>
   </p>
 </div>
 <div class='field'>
   <p>
-    <b><%= Person.human_attribute_name("birthdate") %>:</b> <%= @customer.person.birthdate.to_s.gsub('-', '/') %>
+    <b><%= Person.human_attribute_name("birthdate") %>:</b> <%= @customer.birthdate %>
   </p>
 </div>
 <div class='field'>
   <p>
-    <b><%= Person.human_attribute_name("identity_serial") %>:</b> <%= @customer.person.identity_serial %>
+    <b><%= Person.human_attribute_name("identity_serial") %>:</b> <%= @customer.identity_serial %>
   </p>
 </div>
 <div class='field'>
   <p>
-    <b><%= Person.human_attribute_name("fathername") %>:</b> <%= @customer.person.fathername %>
+    <b><%= Person.human_attribute_name("fathername") %>:</b> <%= @customer.fathername %>
   </p>
 </div>
 <div class='field'>
   <p>
     <b><%= Person.human_attribute_name("identity_issue_date") %>
-      :</b> <%= @customer.person.identity_issue_date.to_s.gsub('-', '/') %>
+      :</b> <%= @customer.identity_issue_date %>
   </p>
 </div>
 <div class='field'>
   <p>
-    <b><%= Person.human_attribute_name("identity_issue_city") %>:</b> <%= @customer.person.identity_issue_city %>
+    <b><%= Person.human_attribute_name("identity_issue_city") %>:</b> <%= @customer.identity_issue_city %>
   </p>
 </div>
 <div class='field'>
   <p>
-    <b><%= Person.human_attribute_name("gender") %>:</b> <%= t @customer.person.gender %>
+    <b><%= Person.human_attribute_name("gender") %>:</b> <%= t @customer.gender %>
   </p>
 </div>
 <div class='field'>
   <p>
-    <b><%= Person.human_attribute_name("marital_status") %>:</b> <%= t @customer.person.marital_status %>
+    <b><%= Person.human_attribute_name("marital_status") %>:</b> <%= t @customer.marital_status %>
   </p>
 </div>

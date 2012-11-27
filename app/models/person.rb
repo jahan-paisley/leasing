@@ -28,12 +28,14 @@ class Person < ActiveRecord::Base
   EDUCATIONS = %w[Illiterate UnderDiploma Diploma Bachelor Master PhD Hawzah]
 
   def build
-    addresses.build
-    addresses.each { |e| e.build }
+    if addresses.empty?
+      addresses.build
+      addresses.each { |e| e.build }
+    end
   end
 
   def to_s
-    "#{firstname || ' '} #{lastname || ' '}" 
+    "#{firstname || ' '} #{lastname || ' '}"
   end
 
 end

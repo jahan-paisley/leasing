@@ -1,88 +1,51 @@
 class KasesController < ApplicationController
-
+  respond_to :xml, :json, :html
   before_filter :authenticate_user!
+  before_filter :to_gregorian_filter, :only => [:create, :update]
 
-  # GET /kases
-  # GET /kases.json
   def index
-    @kases = Kase.order("created_at").page(params[:page]).per(10)
-    @kases.each { |o| to_jalali o }
-    
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @kases }
-    end
+    @kases = Kaminari.paginate_array(KaseDecorator.decorate(Kase.all)).page(params[:page]).per(10)
+    render :index
   end
 
-  # GET /kases/1
-  # GET /kases/1.json
   def show
-    @kase = Kase.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @kase }
-    end
+    @kase = KaseDecorator.find(params[:id])
+    render
   end
 
-  # GET /kases/new
-  # GET /kases/new.json
   def new
     @kase = Kase.new
     @kase.build
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @kase }
-    end
+    render
   end
 
-  # GET /kases/1/edit
   def edit
     @kase = Kase.find(params[:id])
-    @kase = to_jalali @kase
   end
 
-  # POST /kases
-  # POST /kases.json
   def create
     @kase = Kase.new(params[:kase])
-
-    respond_to do |format|
-      if @kase.save
-        format.html { redirect_to @kase, notice: 'Kase was successfully created.' }
-        format.json { render json: @kase, status: :created, location: @kase }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @kase.errors, status: :unprocessable_entity }
-      end
+    if @kase.save
+      redirect_to @kase, notice: t('success_message')
+    else
+      render action: "new"
     end
   end
 
-  # PUT /kases/1
-  # PUT /kases/1.json
+
   def update
     @kase = Kase.find(params[:id])
-
-    respond_to do |format|
-      if @kase.update_attributes(params[:kase])
-        format.html { redirect_to @kase, notice: 'Kase was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @kase.errors, status: :unprocessable_entity }
-      end
+    if @kase.update_attributes(params[:kase])
+      redirect_to @kase, notice: t('success_message')
+    else
+      render action: "edit"
     end
   end
 
-  # DELETE /kases/1
-  # DELETE /kases/1.json
   def destroy
     @kase = Kase.find(params[:id])
     @kase.destroy
-
-    respond_to do |format|
-      format.html { redirect_to kases_url }
-      format.json { head :no_content }
-    end
+    redirect_to kases_url
   end
+
 end

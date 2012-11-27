@@ -1,7 +1,7 @@
 class Kase < ActiveRecord::Base
 
   attr_accessible :finish_date, :idno, :receipt_date, :start_date, :status,
-                  :customer_id, :user_id, :contract_id,:contract_attributes,
+                  :customer_id, :user_id, :contract_id, :contract_attributes,
                   :installments_attributes, :payments_attributes, :customer_attributes
 
   belongs_to :contract
@@ -14,17 +14,16 @@ class Kase < ActiveRecord::Base
   #validates :customer, :presence => true
 
   def build
-    build_contract
-    contract.build_property
-    build_customer
-    customer.build_person
-    customer.person.build
-    contract.guarantees.build
-    contract.guarantees.each { |e| e.build  }
-    contract.guarantors.build
-    contract.guarantors.each { |e| e.build }
-    installments.build
-    payments.build
+    if contract.nil?
+      build_contract
+      contract.build
+    end
+    if customer.nil?
+      build_customer
+      customer.build
+    end
+    installments.build if installments.empty?
+    payments.build if payments.empty?
   end
-  
+
 end

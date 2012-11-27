@@ -7,6 +7,7 @@ describe "Kases" do
 
   before (:each) do
     @user ||= FactoryGirl.create :user
+    @kase ||= FactoryGirl.create :kase
     login_as(@user, :scope => :user)
   end
 

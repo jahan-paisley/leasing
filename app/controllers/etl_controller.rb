@@ -11,18 +11,18 @@ class EtlController < ApplicationController
     end
     excel = Excelx.new(path.to_s)
     counter = 0
-    2.upto(10) do |i|
+    2.upto(100) do |i|
       r = excel.row(i)
       kase = Kase.new
       kase.build
       kase.contract.idno = get r[1]
       kase.idno = get r[2]
-      #kase.contract.property.idno = get r[3]
+      #kase.contract.asset.idno = get r[3]
       kase.customer.person.firstname = get r[5]
       kase.receipt_date= get r[6], :date
-      kase.contract.property.category = get r[7]
+      kase.contract.asset.category = get r[7]
 
-      kase.contract.property.idno = get r[8]
+      kase.contract.asset.idno = get r[8]
       #get r[8] is province
       if get r[10]
         kase.customer.person.addresses[0].city = City.find_or_create_by_name(get r[10])

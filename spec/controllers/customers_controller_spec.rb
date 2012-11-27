@@ -35,7 +35,7 @@ describe CustomersController do
            "lastname"=>"نام خانوادگی",
            "identity_no"=>"",
            "nationalno"=>"1234567891",
-           "birthdate"=>"2010/08/09",
+           "birthdate"=> DateTime.now.strftime,
            "identity_serial"=>"",
            "fathername"=>"",
            "identity_issue_date"=>"",

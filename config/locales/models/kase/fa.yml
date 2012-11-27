@@ -4,7 +4,7 @@ fa:
     models:
       kase: 'پرونده'
       contract: 'قرارداد'
-      property: 'ملک'
+      asset: 'ملک'
       guarantee: 'وثیقه'
       guarantor: 'ضامن'
       installment: 'قسط'
@@ -18,7 +18,7 @@ fa:
         start_date: 'تاریخ شروع'
         finish_date: 'تاریخ پایان'
         receipt_date: 'تاریخ دریافت'
-      property: &property_atts
+      asset: &asset_atts
         idno: 'شماره شناسه ملک'
         category: 'نوع ملک'
         description: 'توضیحات'
@@ -26,7 +26,7 @@ fa:
         category: 'نوع'
         due_date: 'تاریخ سررسید'
         idno: 'شماره'
-        property_id: 'مال به اجاره رفته'
+        asset_id: 'مال به اجاره رفته'
         correspondent_id: 'موسسه مالی/شعبه بانک'
         correspondent: 'موسسه مالی/شعبه بانک'
         sign_date: ' تاریخ عقد قرارداد'
@@ -52,6 +52,6 @@ fa:
         payment_method: 'روش پرداخت'
       kase/contract:
         <<: *contract_atts
-      kase/contract/property:
-        <<: *property_atts
+      kase/contract/asset:
+        <<: *asset_atts
 

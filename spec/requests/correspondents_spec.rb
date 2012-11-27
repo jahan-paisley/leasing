@@ -5,8 +5,9 @@ describe "Correspondents" do
   include Warden::Test::Helpers
   Warden.test_mode!
 
-  before (:each) do
+  before :each do
     @user ||= FactoryGirl.create :user
+    @correspondent ||= FactoryGirl.create :correspondent
     login_as(@user, :scope => :user)
   end
 
