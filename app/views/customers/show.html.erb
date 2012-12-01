@@ -7,7 +7,7 @@
 <%= render 'show_person', :f => @customer %>
 <div class='field'>
   <p>
-    <b><%= Customer.human_attribute_name("legal_type") %>:</b> <%= t @customer.legal_type %>
+    <b><%= Customer.human_attribute_name("legal_type") %>:</b> <%= t @customer.legal_type, :default => '' %>
   </p>
 </div>
 <p>

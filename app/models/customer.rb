@@ -9,6 +9,8 @@ class Customer < ActiveRecord::Base
   #validates :legal_type, :presence => true
   #validates :legal_type, :inclusion => { :in => lambda { |_| LEGAL_TYPES }}
 
+  normalize_attributes :legal_type
+
   LEGAL_TYPES = %w[Individual Business]
 
   def build

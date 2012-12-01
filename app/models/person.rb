@@ -27,6 +27,8 @@ class Person < ActiveRecord::Base
   MARITAL_STATUSES = %w[Married Single]
   EDUCATIONS = %w[Illiterate UnderDiploma Diploma Bachelor Master PhD Hawzah]
 
+  normalize_attributes :marital_status, :gender
+
   def build
     if addresses.empty?
       addresses.build

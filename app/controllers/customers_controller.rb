@@ -27,6 +27,7 @@ class CustomersController < ApplicationController
   end
 
   def create
+
     @customer = Customer.new(params[:customer])
     @customer.save ?
         redirect_to(@customer, notice: (t 'success_message')) :

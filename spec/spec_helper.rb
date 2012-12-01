@@ -32,6 +32,7 @@ Spork.prefork do
 
   counter = -1
   RSpec.configure do |config|
+    config.include AttributeNormalizer::RSpecMatcher, :type => :model
     config.mock_with :rspec
     config.use_transactional_fixtures = true
     config.order = "random"

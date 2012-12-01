@@ -13,7 +13,8 @@ gem 'cocoon'
 gem 'simple_form'
 gem 'roo'
 gem 'axlsx'
-gem "draper"
+gem 'draper'
+gem 'attribute_normalizer'
 
 #gem 'passenger'
 #gem 'omniauth'

@@ -46,11 +46,11 @@
 </div>
 <div class='field'>
   <p>
-    <b><%= Person.human_attribute_name("gender") %>:</b> <%= t @customer.gender %>
+    <b><%= Person.human_attribute_name("gender") %>:</b> <%#= t @customer.person.gender, :default => 'missing' %>
   </p>
 </div>
 <div class='field'>
   <p>
-    <b><%= Person.human_attribute_name("marital_status") %>:</b> <%= t @customer.marital_status %>
+    <b><%= Person.human_attribute_name("marital_status") %>:</b> <%#= t @customer.marital_status, :default => '' %>
   </p>
 </div>
