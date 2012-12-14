@@ -1,3 +1,3 @@
-h1. Leasin app
+h2. Leasin App
 
-h2. An Enterprise app using Rails which beside serving a clinet tries to employ best practices to build a starter kit for similar projects.
+h4. An Enterprise app using Rails which beside serving a clinet tries to employ best practices to build a starter kit for similar projects.
